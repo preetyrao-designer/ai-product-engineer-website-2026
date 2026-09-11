@@ -1,0 +1,10 @@
+.product-assembly{padding:8px 12px 18px;position:relative}
+.product-assembly svg{display:block;width:100%;height:auto;max-height:530px;overflow:visible}
+.product-assembly svg text{font-family:var(--font-mono);font-size:9px;letter-spacing:1.2px}
+.assembly-caption{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:4px 10px 0}
+.assembly-caption span{font-size:12px}.assembly-caption small{font-family:var(--font-mono);font-size:7px;color:#858c99;letter-spacing:.05em}
+.assembly-route{stroke-dasharray:5 7;stroke-opacity:.7}
+.assembly-moving .assembly-route{animation:assembly-flow 2s linear infinite}
+@keyframes assembly-flow{to{stroke-dashoffset:-48}}
+@media(max-width:480px){.assembly-caption{align-items:flex-start;flex-direction:column;gap:8px}.assembly-caption span{font-size:11px}}
+@media(prefers-reduced-motion:reduce){.assembly-route{animation:none!important}}

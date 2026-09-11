@@ -1,6 +1,8 @@
 import type { ReactNode } from 'react';
-import { Lightbulb, CodeXml, Rocket, UsersRound, Layers3, BrainCircuit, PanelsTopLeft, Workflow, Network, ShieldCheck } from 'lucide-react';
+import { Layers3, BrainCircuit, PanelsTopLeft, Workflow, Network, ShieldCheck } from 'lucide-react';
 import FUIBentoGridDark from './bento';
+import FacultyCarousel from './specials-linear-carousel';
+import BuilderJourney from './builder-journey';
 import './program-information.css';
 
 function InformationSection({ id, eyebrow, title, copy, children }: { id: string; eyebrow: string; title: string; copy: string; children: ReactNode }) {
@@ -10,8 +12,6 @@ function InformationSection({ id, eyebrow, title, copy, children }: { id: string
 }
 
 export function BuilderFit() {
-  const icons = [Lightbulb, CodeXml, Rocket, UsersRound];
-  const colors = [['#FFE2A8', '#F59E0B'], ['#9EDCFF', '#4785FF'], ['#E2BEFF', '#9B64F4'], ['#9AF5E4', '#23BBA6']];
   const items = [
     ['You have an idea and need the skills to build it.', 'Learn how interfaces, data, and AI work together so you can turn an idea into something people can use.'],
     ['You can prompt, but cannot explain the code.', 'Understand the decisions behind AI-generated code. Learn to inspect, test, and improve what you build.'],
@@ -19,15 +19,7 @@ export function BuilderFit() {
     ['You want people to build alongside.', 'Start together in Sri Lanka, develop your product through the online core, and finish with an in-person hackathon in Bengaluru.'],
   ];
   return <InformationSection id="who-its-for" eyebrow="Is this you?" title="For people ready to become builders." copy="For non-technical founders, product managers, and ambitious creators who want to build intelligently with AI.">
-    <div className="program-card-grid">{items.map(([title, copy], i) => {
-      const Icon = icons[i];
-      return <article key={title} className="program-info-card builder-fit-card">
-        <Icon className="builder-fit-icon" size={60} strokeWidth={1.8} stroke={`url(#builder-fit-gradient-${i})`} aria-hidden="true">
-          <defs><linearGradient id={`builder-fit-gradient-${i}`} x1="0" y1="0" x2="1" y2="1"><stop stopColor={colors[i][0]}/><stop offset="1" stopColor={colors[i][1]}/></linearGradient></defs>
-        </Icon>
-        <h3>{title}</h3><p>{copy}</p>
-      </article>;
-    })}</div>
+    <BuilderJourney items={items} />
   </InformationSection>;
 }
 
@@ -62,14 +54,13 @@ export function DemoExpectations() {
     ['A working demonstration', 'Run the product with real inputs and make its behavior visible.'],
     ['Your technical decisions', 'Explain the interface, data, models, and connections behind the experience.'],
     ['Your use of AI', 'Describe where AI helped, what you checked, and what you changed yourself.'],
-    ['What comes next', 'Identify the next improvements and what the product needs to reach more users.'],
   ];
-  return <InformationSection id="demo-day" eyebrow="Demo Day" title="Show the product. Explain the decisions." copy="Qualifying builders take on a partner-company problem in a 36-hour Bengaluru hackathon, with mentors in the room. Use these six questions to shape your presentation to the judging panel.">
+  return <InformationSection id="demo-day" eyebrow="Demo Day" title="Show the product. Explain the decisions." copy="Qualifying builders take on a partner-company problem in a 36-hour Bengaluru hackathon, with mentors in the room. Use these five questions to shape your presentation to the judging panel.">
     <FUIBentoGridDark data={items.map(([title, description]) => ({ title, description }))} />
   </InformationSection>;
 }
 
-export function ProgramFAQ({ applyHref }: { applyHref: string }) {
+export function ProgramFAQ() {
   const questions = [
     ['Is AI Product Engineer online or in person?', 'Both. Week 1 is a launch residency in Sri Lanka from 13–17 December 2026. Weeks 2–7 run online, followed by a 36-hour offline hackathon and Demo Day at the Masai office in Bengaluru.'],
     ['Who is the program designed for?', 'Non-technical builders, founders, product managers, and creators who want to understand enough technology to build AI-powered applications.'],
@@ -85,7 +76,6 @@ export function ProgramFAQ({ applyHref }: { applyHref: string }) {
   ];
   return <InformationSection id="faq" eyebrow="Questions before you apply" title="Know what you are signing up for." copy="The essentials about the build, the format, and the application process.">
     <div className="program-faq">{questions.map(([question,answer]) => <details key={question}><summary>{question}<span aria-hidden="true">+</span></summary><p>{answer}</p></details>)}</div>
-    <div className="admissions-actions"><a className="admissions-glass-cta admissions-glass-cta-primary" href={applyHref}>Apply Now</a></div>
   </InformationSection>;
 }
 
@@ -99,7 +89,7 @@ export function Faculty() {
     ['Amit Singh', 'Ericsson', 'Google Authorized Trainer', 'https://cdn.masaischool.com/general/figma/2026/09/10/ape-faculty-amit-singh-396w-1789038013237.webp'],
   ];
   return <InformationSection id="faculty" eyebrow="The faculty" title="Learn from people who build." copy="Practitioners working across AI, cloud, machine learning, and product engineering. With mentors on the floor during the Bengaluru build.">
-    <div className="program-card-grid program-card-grid-three">{people.map(([name,company,role,image]) => <article className="program-info-card faculty-card" key={name}><img className="faculty-portrait" src={image} alt={name} width={396} height={396} loading="lazy" decoding="async"/><span className="program-meta">{company}</span><h3>{name}</h3><p>{role}</p></article>)}</div>
+    <FacultyCarousel people={people.map(([name, company, role, image]) => ({ name, company, role, image }))} />
   </InformationSection>;
 }
 

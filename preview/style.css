@@ -4,3 +4,8 @@
 html { background: #000000; }
 body { margin: 0; font-family: var(--font-sans); }
 * { box-sizing: border-box; }
+.application-glow{position:relative;isolation:isolate;overflow:hidden;background:#000}
+.application-glow::before{content:"";position:absolute;inset:-20%;z-index:-1;pointer-events:none;background:radial-gradient(ellipse 75% 80% at 50% 80%,#102971 0%,#080f2d 44%,transparent 100%);animation:application-glow-drift 16s ease-in-out infinite alternate;will-change:transform}
+@keyframes application-glow-drift{from{transform:translate(-3%,3%) scale(1);opacity:.8}to{transform:translate(3%,-3%) scale(1.1);opacity:1}}
+@media(prefers-reduced-motion:reduce){.application-glow::before{animation:none;will-change:auto}}
+.application-glow::before{mask-image:linear-gradient(to bottom,transparent 25%,#000 55%);-webkit-mask-image:linear-gradient(to bottom,transparent 25%,#000 55%)}

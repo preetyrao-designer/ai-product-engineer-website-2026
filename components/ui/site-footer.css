@@ -1,0 +1,29 @@
+.site-footer{margin-top:0;padding:48px 0 32px;border-top:1px solid #ffffff10}
+.site-footer-top{display:flex;flex-wrap:wrap;justify-content:space-between;gap:64px}
+
+.site-footer-brand{display:flex;flex-direction:column;gap:28px}
+.site-footer-logo{display:block;width:180px;height:auto}
+.site-footer-follow{display:flex;flex-direction:column;gap:14px}
+.site-footer-follow>span{font-family:var(--font-mono);font-size:10px;text-transform:uppercase;letter-spacing:.17em;color:#929dbf}
+.site-footer-social{display:flex;gap:10px}
+.site-footer-social a{display:inline-flex;align-items:center;justify-content:center;width:36px;height:36px;border-radius:50%;border:1px solid #ffffff16;color:#c5cce3;background:linear-gradient(135deg,#ffffff08,#ffffff02),#0a0c10;transition:color .2s ease,border-color .2s ease,transform .2s ease}
+.site-footer-social a:hover{color:#fff;border-color:#ffffff38;transform:translateY(-2px)}
+.site-footer-social a:focus-visible{outline:2px solid #8ca7ff;outline-offset:2px}
+
+.site-footer-columns{display:flex;flex-wrap:wrap;gap:56px}
+.site-footer-column p{margin:0 0 20px;font-family:var(--font-mono);font-size:10px;text-transform:uppercase;letter-spacing:.17em;color:#929dbf}
+.site-footer-column ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:16px}
+.site-footer-column a{font-size:15px;color:#e9edff;text-decoration:none;transition:color .2s ease}
+.site-footer-column a:hover{color:#a9bdff}
+.site-footer-column a:focus-visible{outline:2px solid #8ca7ff;outline-offset:2px}
+
+.site-footer-bottom{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px;margin-top:64px;padding-top:28px;border-top:1px solid #ffffff0e}
+.site-footer-bottom>p{font-size:13px;color:#929dbf}
+.site-footer-legal{display:flex;flex-wrap:wrap;gap:28px}
+.site-footer-legal a{font-size:13px;color:#929dbf;text-decoration:none;transition:color .2s ease}
+.site-footer-legal a:hover{color:#e9edff}
+.site-footer-legal a:focus-visible{outline:2px solid #8ca7ff;outline-offset:2px}
+
+@media(max-width:900px){.site-footer{padding:40px 0 28px}.site-footer-top{gap:48px}.site-footer-columns{gap:40px}}
+@media(max-width:600px){.site-footer-bottom{flex-direction:column;align-items:flex-start}}
+@media(prefers-reduced-motion:reduce){.site-footer-social a,.site-footer-column a,.site-footer-legal a{transition:none}}

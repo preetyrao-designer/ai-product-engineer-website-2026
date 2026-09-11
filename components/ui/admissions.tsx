@@ -19,7 +19,7 @@ export function Admissions({ applyHref }: { applyHref: string }) {
       <h2 id="admissions-title">The admission process</h2>
       <p className="admissions-intro-copy">Six steps from application to the first morning in Sri Lanka. Applications are reviewed on a rolling basis and seats are limited.</p>
     </header>
-    <Timeline data={steps.map(({ title, Icon, copy, tag }, i) => ({ title, content: <>
+    <Timeline data={steps.map(({ title, Icon, copy, tag }, i) => ({ title, titleContent: title === '13 December · Sri Lanka' ? <>13 December · <span className="admission-marker">Sri Lanka</span></> : undefined, content: <>
       <p>{copy}</p>
       <div className="admission-card-footer"><span className="foundry-glass-chip"><Icon size={15} aria-hidden="true"/>{tag}</span>{i === 0 && <a href={applyHref}>Apply Now <ArrowUpRight size={16} aria-hidden="true"/></a>}</div>
     </> }))}/>

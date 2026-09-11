@@ -14,7 +14,12 @@
 }
 .drydock-theme {
   color: var(--color-heading);
-  background: radial-gradient(ellipse 90% 700px at 50% 100vh, #102971 0%, #080F2D 44%, transparent 100%), #000;
+  background: #000;
+}
+.drydock-theme .drydock-body-glow {
+  background-image: radial-gradient(circle, rgba(163,174,185,.14) 1px, transparent 1.2px), radial-gradient(ellipse 90% 700px at 50% 0, #214b36 0%, #0b2119 44%, transparent 100%);
+  background-size: 28px 28px, 100% 100%;
+  background-position: 14px 14px, 0 0;
 }
 .drydock-theme a:focus-visible, .drydock-theme button:focus-visible {
   outline: 2px solid var(--color-focus);

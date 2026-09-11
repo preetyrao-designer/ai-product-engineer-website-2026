@@ -1,25 +1,17 @@
 import type { ReactNode } from 'react';
-import { Target, Package, MonitorPlay, GitBranch, Sparkles, Compass } from 'lucide-react';
+import { Target, Package, MonitorPlay, GitBranch, Sparkles } from 'lucide-react';
 import './bento.css';
 
 export interface BentoEntry { title: string; description: string }
 
-const icons = [Target, Package, MonitorPlay, GitBranch, Sparkles, Compass];
-const colors = [
-  ['#9EDCFF', '#4785FF'],
-  ['#E2BEFF', '#9B64F4'],
-  ['#FFE2A8', '#F59E0B'],
-  ['#FFB9D9', '#E967A3'],
-  ['#9AF5E4', '#23BBA6'],
-  ['#BDF5BB', '#51BD78'],
-];
+const icons = [Target, Package, MonitorPlay, GitBranch, Sparkles];
+const POSTER_TINT = '#8CA7FF';
+const POSTER_ACCENT = '#8CA7FF';
 
-export function BentoCard({ index, title, description }: { index: number; title: ReactNode; description: ReactNode }) {
+export function BentoCard({ index, title, description, featured = false }: { index: number; title: ReactNode; description: ReactNode; featured?: boolean }) {
   const Icon = icons[index % icons.length];
-  const [tint, accent] = colors[index % colors.length];
-  return <article className="demo-poster-card" style={{ '--poster-tint': tint, '--poster-accent': accent } as any}>
-    <span className="demo-poster-tag">{String(index + 1).padStart(2, '0')}</span>
-    <Icon className="demo-poster-icon" strokeWidth={1.1} aria-hidden="true" />
+  return <article className={`demo-poster-card${featured ? ' demo-poster-card-featured' : ''}`} style={{ '--poster-tint': POSTER_TINT, '--poster-accent': POSTER_ACCENT } as any}>
+    <Icon className="demo-poster-icon" strokeWidth={1.3} aria-hidden="true" />
     <div className="demo-poster-text">
       <h3>{title}</h3>
       <p>{description}</p>
@@ -28,5 +20,8 @@ export function BentoCard({ index, title, description }: { index: number; title:
 }
 
 export default function FUIBentoGridDark({ data }: { data: BentoEntry[] }) {
-  return <div className="demo-float-grid">{data.map((item, i) => <BentoCard key={item.title} index={i} {...item} />)}</div>;
+  const featuredIndex = data.reduce((longest, item, index) =>
+    item.title.length + item.description.length > data[longest].title.length + data[longest].description.length ? index : longest, 0);
+  const ordered = data.map((item, index) => ({ ...item, index })).sort((a, b) => Number(b.index === featuredIndex) - Number(a.index === featuredIndex));
+  return <div className="demo-float-grid">{ordered.map(item => <BentoCard key={item.title} {...item} featured={item.index === featuredIndex} />)}</div>;
 }

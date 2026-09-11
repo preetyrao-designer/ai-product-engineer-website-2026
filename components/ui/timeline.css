@@ -22,10 +22,10 @@
 .admissions-details dd,.admissions-details li{color:#c5cce3;font-size:14px;line-height:1.85;margin-top:16px}
 .admissions-details dl>div+div{margin-top:24px;padding-top:24px;border-top:1px solid #ffffff10}
 .admissions-application-highlight{position:relative;isolation:isolate}
-.admissions-application-highlight:before{content:"";position:absolute;inset:-14px;z-index:-1;pointer-events:none;border-radius:18px;border:1px solid #b8a0ff55;background:linear-gradient(135deg,#b8a0ff30,#b8a0ff12);box-shadow:inset 0 1px 0 #b8a0ff33,0 6px 24px #b8a0ff0a}
-.admissions-details .admissions-application-highlight strong{color:#b8a0ff}
-.admissions-details .admissions-application-highlight dt{color:#eee7ff}
-.admissions-details .admissions-application-highlight dd{color:#ded3f5}
+.admissions-application-highlight:before{content:"";position:absolute;inset:-14px;z-index:-1;pointer-events:none;border-radius:18px;border:1px solid #8ca7ff55;background:linear-gradient(135deg,#8ca7ff30,#8ca7ff12);box-shadow:inset 0 1px 0 #8ca7ff33,0 6px 24px #8ca7ff0a}
+.admissions-details .admissions-application-highlight strong{color:#8ca7ff}
+.admissions-details .admissions-application-highlight dt{color:#e9edff}
+.admissions-details .admissions-application-highlight dd{color:#d5def5}
 .admissions-details ul{list-style:none;padding:0}.admissions-details li+li{margin-top:24px}
 @media(max-width:767px){.admission-step{grid-template-columns:1fr;gap:18px;padding:0 0 64px 52px;min-height:0}.admission-track{left:12px}.admission-step-label{position:relative;top:auto;padding:0;font-size:11px}.admission-dot{position:absolute;left:-52px;width:26px;height:26px}.admission-dot:after{inset:8px}.admission-step-card{padding:24px;border-radius:22px}.admissions-details{grid-template-columns:1fr}.admissions-details>article{padding:28px}}
 
@@ -36,3 +36,6 @@
 .admissions-glass-cta:hover{background-color:#ffffff15;border-color:#ffffff55;box-shadow:inset 0 1px 0 #ffffff35,0 8px 28px #0004}
 @media(max-width:480px){.admissions-glass-cta{width:100%;max-width:320px}}
 @media(prefers-reduced-motion:reduce){.admissions-glass-cta{transition:none}}
+.admission-marker{position:relative;display:inline-block;white-space:nowrap;isolation:isolate}
+.admission-marker::after{content:"";position:absolute;left:-.035em;right:-.045em;bottom:-.055em;height:.18em;background:#8ca7ff;z-index:-1;transform:rotate(-1.5deg);clip-path:polygon(1% 20%,17% 9%,43% 18%,70% 3%,98% 12%,100% 73%,78% 94%,49% 80%,20% 100%,0 81%);border-radius:3px}
+#admissions > .section-intro{margin-bottom:80px}
