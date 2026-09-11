@@ -9,7 +9,6 @@ import { useInView, useReducedMotion } from 'framer-motion';
 import { Pause, Play } from 'lucide-react';
 import { BuilderFit, BuildOutcomes, DemoExpectations, ProgramFAQ, Faculty, ProgramFees } from './components/ui/program-information';
 import { Admissions } from './components/ui/admissions';
-import { PrismaHero } from './components/ui/prisma-hero';
 import ScrollExpansionHero from './components/ui/scroll-expansion-hero';
 import type { FoundryTopic } from './FoundryScene';
 
@@ -97,7 +96,6 @@ export default function Hero({ applyHref }: HeroProps) {
   const focus = 'focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#8CA7FF]';
   return <div className="drydock-theme overflow-clip" style={{ fontFamily: 'var(--font-sans)' }}>
     <main id="drydock">
-      <PrismaHero applyHref={applyHref} />
       <ScrollExpansionHero />
       <div className="drydock-dotted-background">
       <div className="relative mx-auto max-w-[1440px] px-5 sm:px-10 lg:px-14">
