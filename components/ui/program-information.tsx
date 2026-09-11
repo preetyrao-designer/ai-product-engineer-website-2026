@@ -1,4 +1,6 @@
 import type { ReactNode } from 'react';
+import { Lightbulb, CodeXml, Rocket, UsersRound, Layers3, BrainCircuit, PanelsTopLeft, Workflow, Network, ShieldCheck } from 'lucide-react';
+import FUIBentoGridDark from './bento';
 import './program-information.css';
 
 function InformationSection({ id, eyebrow, title, copy, children }: { id: string; eyebrow: string; title: string; copy: string; children: ReactNode }) {
@@ -8,6 +10,8 @@ function InformationSection({ id, eyebrow, title, copy, children }: { id: string
 }
 
 export function BuilderFit() {
+  const icons = [Lightbulb, CodeXml, Rocket, UsersRound];
+  const colors = [['#FFE2A8', '#F59E0B'], ['#9EDCFF', '#4785FF'], ['#E2BEFF', '#9B64F4'], ['#9AF5E4', '#23BBA6']];
   const items = [
     ['You have an idea and need the skills to build it.', 'Learn how interfaces, data, and AI work together so you can turn an idea into something people can use.'],
     ['You can prompt, but cannot explain the code.', 'Understand the decisions behind AI-generated code. Learn to inspect, test, and improve what you build.'],
@@ -15,11 +19,21 @@ export function BuilderFit() {
     ['You want people to build alongside.', 'Start together in Sri Lanka, develop your product through the online core, and finish with an in-person hackathon in Bengaluru.'],
   ];
   return <InformationSection id="who-its-for" eyebrow="Is this you?" title="For people ready to become builders." copy="For non-technical founders, product managers, and ambitious creators who want to build intelligently with AI.">
-    <div className="program-card-grid">{items.map(([title, copy]) => <article key={title} className="program-info-card"><h3>{title}</h3><p>{copy}</p></article>)}</div>
+    <div className="program-card-grid">{items.map(([title, copy], i) => {
+      const Icon = icons[i];
+      return <article key={title} className="program-info-card builder-fit-card">
+        <Icon className="builder-fit-icon" size={60} strokeWidth={1.8} stroke={`url(#builder-fit-gradient-${i})`} aria-hidden="true">
+          <defs><linearGradient id={`builder-fit-gradient-${i}`} x1="0" y1="0" x2="1" y2="1"><stop stopColor={colors[i][0]}/><stop offset="1" stopColor={colors[i][1]}/></linearGradient></defs>
+        </Icon>
+        <h3>{title}</h3><p>{copy}</p>
+      </article>;
+    })}</div>
   </InformationSection>;
 }
 
 export function BuildOutcomes() {
+  const icons = [Layers3, BrainCircuit, PanelsTopLeft, Workflow, Network, ShieldCheck];
+  const colors = [['#9EDCFF', '#4785FF'], ['#E2BEFF', '#9B64F4'], ['#FFE2A8', '#F59E0B'], ['#FFB9D9', '#E967A3'], ['#9AF5E4', '#23BBA6'], ['#BDF5BB', '#51BD78']];
   const weeks = [
     ['Week 02', 'Understand the software underneath', 'Connect the browser, server, and data layer. Learn to reason about the system you are building.'],
     ['Week 03', 'Give the model clear instructions', 'Explore prompting, structured outputs, tool calls, and streaming as parts of an application.'],
@@ -29,7 +43,15 @@ export function BuildOutcomes() {
     ['Week 07', 'Test it and put it online', 'Evaluate outputs, examine security, and deploy the product to a public URL.'],
   ];
   return <InformationSection id="learning-outcomes" eyebrow="Inside the online core" title="One product. Six weeks of progress." copy="Each week adds a capability to the product you committed to in Sri Lanka. The result is a connected application you can explain and demonstrate.">
-    <div className="program-card-grid program-card-grid-three">{weeks.map(([week,title,copy]) => <article className="program-info-card" key={week}><span className="program-meta">{week}</span><h3>{title}</h3><p>{copy}</p></article>)}</div>
+    <div className="program-card-grid program-card-grid-three">{weeks.map(([week,title,copy], i) => {
+      const Icon = icons[i];
+      return <article className="program-info-card" key={week}>
+        <Icon className="builder-fit-icon" size={60} strokeWidth={1.8} stroke={`url(#outcome-gradient-${i})`} aria-hidden="true">
+          <defs><linearGradient id={`outcome-gradient-${i}`} x1="0" y1="0" x2="1" y2="1"><stop stopColor={colors[i][0]}/><stop offset="1" stopColor={colors[i][1]}/></linearGradient></defs>
+        </Icon>
+        <span className="program-meta">{week}</span><h3>{title}</h3><p>{copy}</p>
+      </article>;
+    })}</div>
   </InformationSection>;
 }
 
@@ -43,7 +65,7 @@ export function DemoExpectations() {
     ['What comes next', 'Identify the next improvements and what the product needs to reach more users.'],
   ];
   return <InformationSection id="demo-day" eyebrow="Demo Day" title="Show the product. Explain the decisions." copy="Qualifying builders take on a partner-company problem in a 36-hour Bengaluru hackathon, with mentors in the room. Use these six questions to shape your presentation to the judging panel.">
-    <div className="program-card-grid program-card-grid-three">{items.map(([title,copy]) => <article className="program-info-card" key={title}><h3>{title}</h3><p>{copy}</p></article>)}</div>
+    <FUIBentoGridDark data={items.map(([title, description]) => ({ title, description }))} />
   </InformationSection>;
 }
 
@@ -69,15 +91,15 @@ export function ProgramFAQ({ applyHref }: { applyHref: string }) {
 
 export function Faculty() {
   const people = [
-    ['Aditya Rane', 'Google', 'AI & ML Technical Solutions Consultant'],
-    ['Deepak Kasera', 'Microsoft', 'Senior Engineer, Cloud & AI'],
-    ['Shubhendu Shishir', 'Simplismart', 'Head of Engineering'],
-    ['Saksham Arora', 'Intuit', 'Backend Engineering Lead, Identity'],
-    ['Mohit Uniyal', 'PayPal', 'Senior ML Engineer'],
-    ['Amit Singh', 'Ericsson', 'Google Authorized Trainer'],
+    ['Aditya Rane', 'Google', 'AI & ML Technical Solutions Consultant', 'https://cdn.masaischool.com/general/figma/2026/09/10/ape-faculty-aditya-rane-396w-1789038005435.webp'],
+    ['Deepak Kasera', 'Microsoft', 'Senior Engineer, Cloud & AI', 'https://cdn.masaischool.com/general/figma/2026/09/10/ape-faculty-deepak-kasera-396w-1789038005438.webp'],
+    ['Shubhendu Shishir', 'Simplismart', 'Head of Engineering', 'https://cdn.masaischool.com/general/figma/2026/09/10/ape-faculty-shubhendu-shishir-396w-1789038005439.webp'],
+    ['Saksham Arora', 'Intuit', 'Backend Engineering Lead, Identity', 'https://cdn.masaischool.com/general/figma/2026/09/10/ape-faculty-saksham-arora-396w-1789038013235.webp'],
+    ['Mohit Uniyal', 'PayPal', 'Senior ML Engineer', 'https://cdn.masaischool.com/general/image_9_1.webp-1789127022989-1789127023112.webp'],
+    ['Amit Singh', 'Ericsson', 'Google Authorized Trainer', 'https://cdn.masaischool.com/general/figma/2026/09/10/ape-faculty-amit-singh-396w-1789038013237.webp'],
   ];
   return <InformationSection id="faculty" eyebrow="The faculty" title="Learn from people who build." copy="Practitioners working across AI, cloud, machine learning, and product engineering. With mentors on the floor during the Bengaluru build.">
-    <div className="program-card-grid program-card-grid-three">{people.map(([name,company,role]) => <article className="program-info-card" key={name}><span className="program-meta">{company}</span><h3>{name}</h3><p>{role}</p></article>)}</div>
+    <div className="program-card-grid program-card-grid-three">{people.map(([name,company,role,image]) => <article className="program-info-card faculty-card" key={name}><img className="faculty-portrait" src={image} alt={name} width={396} height={396} loading="lazy" decoding="async"/><span className="program-meta">{company}</span><h3>{name}</h3><p>{role}</p></article>)}</div>
   </InformationSection>;
 }
 

@@ -1,0 +1,11 @@
+.demo-float-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px;max-width:1180px;margin:0 auto}
+.demo-poster-card{position:relative;overflow:hidden;display:flex;flex-direction:column;aspect-ratio:4/5;padding:24px;border-radius:20px;border:1px solid #ffffff14;background:#0a0c12;box-shadow:inset 0 1px 0 #ffffff10,0 20px 40px -26px #000c}
+.demo-poster-card:before{content:"";position:absolute;inset:0;z-index:0;background:linear-gradient(155deg,var(--poster-accent) 0%,transparent 58%);opacity:.16;pointer-events:none}
+.demo-poster-card:after{content:"";position:absolute;inset:0;z-index:0;background:linear-gradient(0deg,#05060ae6 0%,#05060a80 35%,transparent 70%);pointer-events:none}
+.demo-poster-tag{position:relative;z-index:2;display:block;margin-bottom:auto;font-family:var(--font-mono);font-size:11px;letter-spacing:.17em;color:#fff;opacity:.7}
+.demo-poster-icon{position:absolute;z-index:1;right:-8%;top:6%;width:54%;height:54%;color:var(--poster-tint);opacity:.3;pointer-events:none}
+.demo-poster-text{position:relative;z-index:2}
+.demo-poster-text h3{font-family:var(--font-display);font-size:19px;font-weight:500;line-height:1.32;letter-spacing:-.02em;color:#f2f4fb}
+.demo-poster-text p{margin-top:10px;font-size:13.5px;line-height:1.75;color:#c7cce0}
+@media(max-width:1023px){.demo-float-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:639px){.demo-float-grid{grid-template-columns:1fr}.demo-poster-card{aspect-ratio:16/12}}

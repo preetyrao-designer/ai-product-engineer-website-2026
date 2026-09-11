@@ -25,7 +25,7 @@ export function Admissions({ applyHref }: { applyHref: string }) {
     </> }))}/>
     <div className="admissions-details">
       <article><h3>What you pay, and when</h3><dl>
-        <div><dt><strong>₹999</strong> Application</dt><dd>Paid with the form, before review.</dd></div>
+        <div className="admissions-application-highlight"><dt><strong>₹999</strong> Application</dt><dd>Paid with the form, before review.</dd></div>
         <div><dt><strong>₹5,000</strong> Seat blocking</dt><dd>Paid after counselling to hold your place. Adjusted against the full program fee.</dd></div>
       </dl></article>
       <article><h3>Before you apply</h3><ul>

@@ -10,6 +10,7 @@ import { Pause, Play } from 'lucide-react';
 import { BuilderFit, BuildOutcomes, DemoExpectations, ProgramFAQ, Faculty, ProgramFees } from './components/ui/program-information';
 import { Admissions } from './components/ui/admissions';
 import { PrismaHero } from './components/ui/prisma-hero';
+import ScrollExpansionHero from './components/ui/scroll-expansion-hero';
 import type { FoundryTopic } from './FoundryScene';
 
 const FoundryScene = lazy(() => import('./FoundryScene'));
@@ -97,6 +98,7 @@ export default function Hero({ applyHref }: HeroProps) {
   return <div className="drydock-theme overflow-clip" style={{ fontFamily: 'var(--font-sans)' }}>
     <main id="drydock">
       <PrismaHero applyHref={applyHref} />
+      <ScrollExpansionHero />
       <div className="drydock-dotted-background">
       <div className="relative mx-auto max-w-[1440px] px-5 sm:px-10 lg:px-14">
       <section id="curriculum" aria-labelledby="curriculum-title" className="relative scroll-mt-8 border-t border-white/10 pt-[200px]">
@@ -147,8 +149,8 @@ export default function Hero({ applyHref }: HeroProps) {
       <BuildOutcomes />
       <Faculty />
       <DemoExpectations />
-      <ProgramFees />
       <Admissions applyHref={applyHref} />
+      <ProgramFees />
       <ProgramFAQ applyHref={applyHref} />
 
 

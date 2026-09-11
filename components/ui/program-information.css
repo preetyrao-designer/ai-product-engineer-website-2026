@@ -19,3 +19,14 @@
 .program-payment-stages{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-top:28px}.program-payment-stages span{padding:10px 16px;font-size:12px;color:#c5cce3}
 .program-inclusions{padding-left:18px;margin-top:24px;color:#c5cce3;font-size:14px;line-height:1.85;list-style:disc}.program-inclusions li+li{margin-top:14px}
 .program-policy{text-align:center;margin:24px auto 0;font-size:12px;line-height:1.7;color:#929dbf}.program-policy a{color:#a9bdff;text-decoration:underline;text-underline-offset:4px}
+
+/* Compact the introduction-to-content gap only in the five requested sections. */
+:is(#who-its-for, #learning-outcomes, #faculty, #demo-day, #fees, #faq) > .section-intro {
+  margin-bottom: 72px;
+}
+
+.faculty-portrait{display:block;width:100%;height:auto;aspect-ratio:1;object-fit:cover;object-position:center top;border-radius:18px;margin-bottom:28px;background:#111318}
+
+.builder-fit-icon{display:block;margin-bottom:36px;flex-shrink:0}
+.builder-fit-card{padding:36px}
+@media(max-width:600px){.builder-fit-card{padding:28px}.builder-fit-icon{width:52px;height:52px;margin-bottom:28px}}
