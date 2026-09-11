@@ -1,0 +1,16 @@
+.cinematic-option{margin:24px -24px 64px}
+.cinematic-film{position:relative;isolation:isolate;overflow:hidden;min-height:650px;display:flex;align-items:center;border-radius:12px;background:#0d1117}
+.cinematic-background{position:absolute;inset:0;z-index:-3;opacity:.36;pointer-events:none}
+.cinematic-media{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;z-index:0;pointer-events:none}
+/* Dim the composite once, keeping the poster from ghosting through the video. */
+video.cinematic-media{z-index:1}
+.cinematic-shade{position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(13,17,23,.72),rgba(13,17,23,.32) 60%,rgba(13,17,23,.12)),linear-gradient(0deg,#0d1117,transparent 24%,transparent 85%,rgba(13,17,23,.3));pointer-events:none}
+.cinematic-copy{width:100%;padding:80px 48px}
+.cinematic-eyebrow{font-family:var(--font-mono);font-size:13px;letter-spacing:.23em;text-transform:uppercase;color:#a1b1bb;margin:0 0 25px}
+.cinematic-copy h1{font-family:var(--font-display);font-weight:500;font-size:clamp(2.75rem,5.3vw,5rem);line-height:1.06;letter-spacing:-.035em;max-width:780px;margin:0;color:#f2f6f7}
+.cinematic-copy h1 span{color:#c8f4ee}
+.cinematic-subline{font-family:var(--font-sans);font-size:clamp(1rem,1.4vw,1.2rem);line-height:1.85;color:#b5c0c7;max-width:590px;margin:34px 0 0}
+.cinematic-playback{position:absolute;right:22px;bottom:22px;width:40px;height:40px;display:flex;align-items:center;justify-content:center;border:1px solid #71868a70;border-radius:50%;background:#0d111780;color:#c4d8d6}
+.cinematic-playback:focus-visible{outline:2px solid #61e8ef;outline-offset:4px}
+@media(max-width:767px){.cinematic-option{margin:16px 0 44px}.cinematic-film{min-height:570px}.cinematic-copy{padding:56px 22px 72px}.cinematic-eyebrow{font-size:11px;margin-bottom:22px}.cinematic-subline{margin-top:28px;font-size:16px}.cinematic-background{position:absolute;inset:0;z-index:-3;opacity:.36;pointer-events:none}
+.cinematic-media{object-position:65% center}.cinematic-shade{background:linear-gradient(90deg,#0d111799,#0d111755),linear-gradient(0deg,#0d1117,transparent 40%)}.cinematic-playback{right:14px;bottom:14px}}

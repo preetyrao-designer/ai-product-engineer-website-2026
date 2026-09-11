@@ -1,0 +1,1 @@
+export default { content: ['./index.html', './components/**/*.{ts,tsx}', './Hero.tsx', './FoundryScene.tsx', './preview/**/*.{ts,tsx}'], theme: {extend: { colors: { primary: '#174BFF' }, fontFamily: { display: ['var(--font-display)'], sans: ['var(--font-sans)'], mono: ['var(--font-mono)'] } }}, plugins: [] };

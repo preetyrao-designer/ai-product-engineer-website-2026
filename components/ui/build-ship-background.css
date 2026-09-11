@@ -1,0 +1,19 @@
+.build-ship-background{position:absolute;inset:0;overflow:hidden;background:#111311}
+.build-ship-camera{width:100%;height:100%;transform-origin:74% 42%;animation:build-ship-camera 20s cubic-bezier(.4,0,.2,1) infinite}
+.build-ship-node,.build-ship-connection{opacity:0;animation:build-ship-reveal 20s ease both infinite;animation-delay:calc(var(--step)*.45s)}
+.build-ship-node{transform-box:fill-box;transform-origin:center}
+.build-ship-signal{animation:build-ship-flow 2.5s linear infinite}
+.build-ship-node{filter:drop-shadow(0 2px 5px #0009)}
+.build-ship-clouds{animation:build-ship-cloud-drift 24s ease-in-out infinite alternate}
+.build-ship-clouds-near{animation-duration:17s;animation-direction:alternate-reverse}
+@keyframes build-ship-cloud-drift{from{transform:translate(-85px,12px) scale(1.02)}to{transform:translate(85px,-18px) scale(1.08)}}
+.build-ship-background *{animation-play-state:paused}
+.build-ship-background[data-running="true"] *{animation-play-state:running}
+.build-ship-background[data-reduced="true"] *{animation:none!important}
+.build-ship-background[data-reduced="true"] .build-ship-camera{transform:none}
+.build-ship-pause{position:absolute;z-index:30;right:20px;top:18px;width:32px;height:32px;display:grid;place-items:center;color:#e1e0cc;background:#0008;border:1px solid #e1e0cc40;border-radius:50%;backdrop-filter:blur(8px)}
+.build-ship-pause:focus-visible{outline:2px solid #e1e0cc;outline-offset:4px}
+@keyframes build-ship-camera{0%,12%,100%{transform:scale(1)}45%,62%{transform:scale(1.16)}85%{transform:scale(1.025)}}
+@keyframes build-ship-reveal{0%,15%,90%,100%{opacity:0;translate:0 8px}23%,78%{opacity:1;translate:0 0}}
+@keyframes build-ship-flow{to{stroke-dashoffset:-100}}
+@media(max-width:767px){.build-ship-camera{width:155%;max-width:none;margin-left:-42%;transform-origin:74% 42%}.build-ship-pause{right:10px;top:46px}}

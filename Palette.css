@@ -1,0 +1,22 @@
+:root {
+  --color-background: #000000;
+  --color-navy: #080F2D;
+  --color-surface: #0B1433;
+  --color-surface-raised: #111D42;
+  --color-border: #28365A;
+  --color-blue: #174BFF;
+  --color-blue-hover: #3564FF;
+  --color-focus: #8CA7FF;
+  --color-heading: #E9EDFF;
+  --color-body: #C5CCE3;
+  --color-muted: #929DBF;
+  --color-caption: #7E8AA9;
+}
+.drydock-theme {
+  color: var(--color-heading);
+  background: radial-gradient(ellipse 90% 700px at 50% 100vh, #102971 0%, #080F2D 44%, transparent 100%), #000;
+}
+.drydock-theme a:focus-visible, .drydock-theme button:focus-visible {
+  outline: 2px solid var(--color-focus);
+  outline-offset: 4px;
+}

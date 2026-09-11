@@ -1,0 +1,21 @@
+.program-information{padding-top:200px;scroll-margin-top:40px}
+.program-information h2{font-size:clamp(32px,4vw,52px);letter-spacing:-.035em;font-weight:500;line-height:1.15}
+.program-card-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:24px;max-width:1080px;margin:auto}
+.program-card-grid-three{grid-template-columns:repeat(3,minmax(0,1fr))}
+.program-info-card{padding:32px;border:1px solid #ffffff0e;border-radius:28px;background:linear-gradient(135deg,#ffffff08,#ffffff02),#090b10bb;box-shadow:inset 0 1px 0 #ffffff0b;backdrop-filter:blur(16px)}
+.program-info-card h3{color:#e9edff;font-size:22px;font-weight:500;line-height:1.3;letter-spacing:-.02em}
+.program-info-card p,.program-faq p{margin-top:18px;font-size:14px;color:#c5cce3;line-height:1.85}
+.program-meta{display:block;font-family:var(--font-mono);font-size:10px;text-transform:uppercase;letter-spacing:.1em;color:#929dbf;margin-bottom:24px}
+.program-faq{max-width:1080px;margin:auto}
+.program-faq details{padding:24px 28px;border:1px solid #ffffff0e;border-radius:20px;background:#090b10bb;margin-bottom:12px}
+.program-faq summary{display:flex;justify-content:space-between;gap:24px;cursor:pointer;color:#e9edff;list-style:none;font-size:16px}
+.program-faq summary::-webkit-details-marker{display:none}.program-faq summary span{color:#a9bdff}.program-faq details[open] summary span{transform:rotate(45deg)}
+.program-faq summary:focus-visible{outline:2px solid #8ca7ff;outline-offset:6px;border-radius:4px}
+@media(max-width:900px){.program-card-grid-three{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:600px){.program-card-grid{grid-template-columns:1fr}.program-info-card{padding:26px}}
+
+.program-fee-total{max-width:1080px;margin:0 auto 32px;text-align:center;padding:48px 24px;border:1px solid #ffffff0e;border-radius:28px;background:linear-gradient(135deg,#ffffff08,#ffffff02),#090b10bb}
+.program-fee-total>p{font-family:var(--font-display);font-size:clamp(36px,5vw,64px);color:#e9edff;letter-spacing:-.04em}.program-fee-total>p>span{font-family:var(--font-sans);font-size:18px;color:#929dbf;letter-spacing:0}
+.program-payment-stages{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-top:28px}.program-payment-stages span{padding:10px 16px;font-size:12px;color:#c5cce3}
+.program-inclusions{padding-left:18px;margin-top:24px;color:#c5cce3;font-size:14px;line-height:1.85;list-style:disc}.program-inclusions li+li{margin-top:14px}
+.program-policy{text-align:center;margin:24px auto 0;font-size:12px;line-height:1.7;color:#929dbf}.program-policy a{color:#a9bdff;text-decoration:underline;text-underline-offset:4px}

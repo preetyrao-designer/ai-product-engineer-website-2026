@@ -1,0 +1,12 @@
+.prisma-hero{height:100svh;min-height:620px;--color-focus:#E1E0CC;color:#E1E0CC;background:#000}
+.prisma-content{--wordmark-size:clamp(32px,calc((100vw - 220px)*.14),190px);position:absolute;bottom:0;left:0;right:0;display:grid;grid-template-columns:max-content max-content;align-items:center;column-gap:clamp(12px,1.2vw,20px);row-gap:12px;padding:0 clamp(20px,3vw,48px) 20px}
+.prisma-description{grid-column:1/-1;max-width:600px;margin:0;color:rgba(225,224,204,.7);font-size:clamp(14px,1.2vw,18px);line-height:1.55;text-shadow:0 2px 20px #0009}
+.prisma-apply{align-self:end!important;margin-bottom:calc(var(--wordmark-size)*.12);white-space:nowrap}
+.prisma-wordmark{font-size:var(--wordmark-size);font-weight:500;line-height:1.04;letter-spacing:-.07em;margin:0}
+@media(max-width:767px){.prisma-description{max-width:520px}.prisma-hero{min-height:600px}}
+@media(max-width:480px){.prisma-content{--wordmark-size:9vw;column-gap:12px;row-gap:10px}.prisma-wordmark{font-size:var(--wordmark-size)}.prisma-apply{font-size:11px;padding-left:10px;gap:4px}.prisma-apply>span{width:28px;height:28px}}
+/* Optically align the title with the supporting copy. */
+.prisma-wordmark{transform:translateX(-.02em);text-align:left}
+.prisma-description{text-align:left}
+
+.prisma-title-line{display:block;white-space:nowrap}.prisma-title-line>div{flex-wrap:nowrap}
