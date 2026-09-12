@@ -62,7 +62,7 @@ export function DemoExpectations() {
 
 export function ProgramFAQ() {
   const questions = [
-    ['Is AI Product Engineer online or in person?', 'Both. Week 1 is a launch residency in Sri Lanka from 13–17 December 2026. Weeks 2–7 run online, followed by a 36-hour offline hackathon and Demo Day at the Masai office in Bengaluru.'],
+    ['Is AI Residency online or in person?', 'Both. Week 1 is a launch residency in Sri Lanka from 13–17 December 2026. Weeks 2–7 run online, followed by a 36-hour offline hackathon and Demo Day at the Masai office in Bengaluru.'],
     ['Who is the program designed for?', 'Non-technical builders, founders, product managers, and creators who want to understand enough technology to build AI-powered applications.'],
     ['Will I keep building the same product?', 'Yes. You carry one continuous product build through the program, adding interfaces, data, AI capabilities, evaluation, and deployment.'],
     ['What should I expect to leave with?', 'The program is structured around a working, deployed product and the ability to explain how it works, how you used AI, and what you would improve next.'],

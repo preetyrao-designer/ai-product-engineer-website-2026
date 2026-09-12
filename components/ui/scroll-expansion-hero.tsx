@@ -51,8 +51,8 @@ export default function ScrollExpansionHero() {
       <div className="sri-expansion-copy" style={reduced ? { display: 'none' } : undefined}>
         {showOpening && <motion.p className="sri-expansion-opening" style={{ opacity: openingOpacity }}>Have an immersive experience in Sri Lanka with our</motion.p>}
         <h2 id="sri-experience-title">
-          <motion.span style={{ x: reduced ? 0 : left }}>AI Product</motion.span>
-          <motion.span style={{ x: reduced ? 0 : right }}>Engineer program</motion.span>
+          <motion.span style={{ x: reduced ? 0 : left }}>AI Residency</motion.span>
+          <motion.span style={{ x: reduced ? 0 : right }}>Program</motion.span>
         </h2>
       </div>
       <button className="sri-expansion-pause" onClick={() => setPaused(!paused)} aria-label={paused ? 'Play experience video' : 'Pause experience video'} disabled={!!reduced}>
