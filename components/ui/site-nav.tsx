@@ -6,6 +6,7 @@ import './site-nav.css';
 const LINKS = [
   { label: 'Curriculum', href: '#curriculum' },
   { label: 'Faculty', href: '#faculty' },
+  { label: 'Admission', href: '#admissions' },
   { label: 'Fees', href: '#fees' },
   { label: 'FAQ', href: '#faq' },
 ];
