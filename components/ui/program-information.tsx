@@ -13,10 +13,10 @@ function InformationSection({ id, eyebrow, title, copy, children }: { id: string
 
 export function BuilderFit() {
   const items = [
-    ['You have an idea and need the skills to build it.', 'Learn how interfaces, data, and AI work together so you can turn an idea into something people can use.'],
-    ['You can prompt, but cannot explain the code.', 'Understand the decisions behind AI-generated code. Learn to inspect, test, and improve what you build.'],
-    ['Your prototype has never reached a real user.', 'Carry one product through its data layer, AI capabilities, evaluation, and deployment.'],
-    ['You want people to build alongside.', 'Start together in Sri Lanka, develop your product through the online core, and finish with an in-person hackathon in Bengaluru.'],
+    ['You have an idea and need the skills to build it.', 'Learn how interfaces, data, and AI work together to build something real.'],
+    ['You can prompt, but cannot explain the code.', 'Learn to inspect, test, and improve AI-generated code.'],
+    ['Your prototype has never reached a real user.', 'Take one product from data to deployment.'],
+    ['You want people to build alongside.', 'Start in Sri Lanka, build online, and demo live in Bengaluru.'],
   ];
   return <InformationSection id="who-its-for" eyebrow="Is this you?" title="For people ready to become builders." copy="For non-technical founders, product managers, and ambitious creators who want to build intelligently with AI.">
     <BuilderJourney items={items} />

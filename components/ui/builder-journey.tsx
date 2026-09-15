@@ -25,11 +25,13 @@ export default function BuilderJourney({ items }: { items: string[][] }) {
         {items.map(([title, copy], index) => {
           const state = index < active ? 'done' : index === active ? 'active' : 'upcoming';
           return <li key={title} className={`builder-journey-step builder-journey-step-${state}`}>
-            <span className="builder-journey-dot" aria-hidden="true">{state === 'upcoming' ? String(index + 1).padStart(2, '0') : <Check size={15} strokeWidth={2.5} />}</span>
+            <span className="builder-journey-dot" aria-hidden="true">
+              <span className="builder-journey-num">{String(index + 1).padStart(2, '0')}</span>
+              <Check className="builder-journey-check" size={15} strokeWidth={2.5} />
+            </span>
             <div className="builder-journey-copy">
               <h3>{title}</h3>
               <p>{copy}</p>
-              <img className="builder-journey-copy-image" src={VISUALS[index].image} alt={VISUALS[index].alt} loading="lazy" decoding="async" />
             </div>
           </li>;
         })}

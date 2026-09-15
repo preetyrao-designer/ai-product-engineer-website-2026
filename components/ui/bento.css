@@ -11,4 +11,10 @@
 .demo-poster-card-featured .demo-poster-text h3{font-size:23px}
 .demo-poster-card-featured .demo-poster-text p{margin-top:12px;font-size:14px;line-height:1.75}
 @media(max-width:900px){.demo-float-grid{grid-template-columns:repeat(2,minmax(0,1fr));grid-auto-rows:170px}.demo-poster-card-featured{grid-column:span 2;grid-row:span 1}}
-@media(max-width:639px){.demo-float-grid{grid-template-columns:1fr;grid-auto-rows:auto}.demo-poster-card{grid-column:span 1;grid-row:span 1;aspect-ratio:16/11}.demo-poster-card-featured{aspect-ratio:16/13}}
+@media(max-width:639px){
+  .demo-float-grid{grid-template-columns:1fr;grid-auto-rows:auto;gap:14px}
+  .demo-poster-card,.demo-poster-card-featured{grid-column:span 1;grid-row:span 1;aspect-ratio:auto;padding:20px}
+  .demo-poster-icon,.demo-poster-card-featured .demo-poster-icon{position:relative;z-index:1;top:auto;right:auto;width:30px;height:30px;margin-bottom:14px;opacity:.85}
+  .demo-poster-text h3,.demo-poster-card-featured .demo-poster-text h3{font-size:16px}
+  .demo-poster-text p,.demo-poster-card-featured .demo-poster-text p{margin-top:6px;font-size:13px;line-height:1.6}
+}

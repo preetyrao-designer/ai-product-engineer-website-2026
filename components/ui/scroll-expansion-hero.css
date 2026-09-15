@@ -13,8 +13,6 @@
 .sri-expansion-copy h2{font-family:var(--font-display);font-size:clamp(36px,6.2vw,94px);font-weight:500;line-height:1.12;letter-spacing:-.045em;color:#e9edff;text-shadow:0 2px 30px #0006}
 .sri-expansion-copy h2 span{display:block;will-change:transform}
 .sri-expansion-hint{display:flex;align-items:center;justify-content:center;gap:10px;position:absolute;bottom:32px;left:0;width:100%;margin:0;color:#e9edff;z-index:1;font-family:var(--font-mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase}
-.sri-expansion-pause{position:absolute;right:4vw;bottom:3svh;display:flex;align-items:center;gap:8px;padding:12px 18px;border-radius:999px;border:1px solid #ffffff30;background:#1118;backdrop-filter:blur(16px);color:#e9edff;font-size:12px;z-index:2}
-.sri-expansion-pause:focus-visible{outline:2px solid #b8a0ff;outline-offset:4px}
 .sri-expansion-reduced{height:100svh}
-@media(max-width:600px){.sri-expansion-copy h2{font-size:clamp(32px,8vw,48px)}.sri-expansion-intro{max-width:350px}.sri-expansion-media{border-radius:18px}}
+@media(max-width:600px){.sri-expansion-copy h2{font-size:clamp(32px,8vw,48px)}.sri-expansion-intro{max-width:350px;font-size:20px}.sri-expansion-media{border-radius:18px}}
 .sri-expansion-opening{position:absolute;bottom:calc(100% + 28px);left:50%;transform:translateX(-50%);width:calc(100% - 48px);max-width:760px;margin:0;font-size:clamp(16px,1.8vw,24px);line-height:1.6;text-align:center;color:#e9edff;text-shadow:0 2px 20px #000}

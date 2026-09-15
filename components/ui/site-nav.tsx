@@ -1,6 +1,7 @@
 "use client";
 
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
+import { Menu, X } from 'lucide-react';
 import './site-nav.css';
 
 const LINKS = [
@@ -13,6 +14,8 @@ const LINKS = [
 
 export function SiteNav({ applyHref, revealAfter = 'curriculum' }: { applyHref: string; revealAfter?: string }) {
   const [visible, setVisible] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
+  const navRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
     const target = document.getElementById(revealAfter);
@@ -33,8 +36,25 @@ export function SiteNav({ applyHref, revealAfter = 'curriculum' }: { applyHref: 
     };
   }, [revealAfter]);
 
-  return <nav className={`site-nav${visible ? ' site-nav-visible' : ''}`} aria-label="Primary">
+  useEffect(() => {
+    if (!menuOpen) return;
+    const onKeyDown = (event: KeyboardEvent) => { if (event.key === 'Escape') setMenuOpen(false); };
+    const onPointerDown = (event: PointerEvent) => { if (navRef.current && !navRef.current.contains(event.target as Node)) setMenuOpen(false); };
+    document.addEventListener('keydown', onKeyDown);
+    document.addEventListener('pointerdown', onPointerDown);
+    return () => {
+      document.removeEventListener('keydown', onKeyDown);
+      document.removeEventListener('pointerdown', onPointerDown);
+    };
+  }, [menuOpen]);
+
+  useEffect(() => { setMenuOpen(false); }, [visible]);
+
+  return <nav ref={navRef} className={`site-nav${visible ? ' site-nav-visible' : ''}${menuOpen ? ' site-nav-menu-open' : ''}`} aria-label="Primary">
     <div className="site-nav-glass">
+      <button type="button" className="site-nav-menu-btn" aria-expanded={menuOpen} aria-controls="site-nav-drawer" aria-label={menuOpen ? 'Close navigation menu' : 'Open navigation menu'} onClick={() => setMenuOpen(open => !open)}>
+        {menuOpen ? <X size={18} aria-hidden="true" /> : <Menu size={18} aria-hidden="true" />}
+      </button>
       <a className="site-nav-brand" href="#top" aria-label="LEAP by Masai, home">
         <span className="site-nav-brand-word">LEAP<span className="site-nav-brand-dot">.</span></span>
         <span className="site-nav-brand-sub">By Masai</span>
@@ -43,6 +63,11 @@ export function SiteNav({ applyHref, revealAfter = 'curriculum' }: { applyHref: 
         {LINKS.map(link => <li key={link.href}><a href={link.href}>{link.label}</a></li>)}
       </ul>
       <a className="site-nav-cta" href={applyHref}>Apply Now</a>
+    </div>
+    <div className="site-nav-drawer" id="site-nav-drawer" hidden={!menuOpen}>
+      <ul>
+        {LINKS.map(link => <li key={link.href}><a href={link.href} onClick={() => setMenuOpen(false)}>{link.label}</a></li>)}
+      </ul>
     </div>
   </nav>;
 }
