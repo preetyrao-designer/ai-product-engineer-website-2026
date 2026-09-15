@@ -1,5 +1,4 @@
 import type { ReactNode } from 'react';
-import { Layers3, BrainCircuit, PanelsTopLeft, Workflow, Network, ShieldCheck } from 'lucide-react';
 import FUIBentoGridDark from './bento';
 import FacultyCarousel from './specials-linear-carousel';
 import BuilderJourney from './builder-journey';
@@ -20,30 +19,6 @@ export function BuilderFit() {
   ];
   return <InformationSection id="who-its-for" eyebrow="Is this you?" title="For people ready to become builders." copy="For non-technical founders, product managers, and ambitious creators who want to build intelligently with AI.">
     <BuilderJourney items={items} />
-  </InformationSection>;
-}
-
-export function BuildOutcomes() {
-  const icons = [Layers3, BrainCircuit, PanelsTopLeft, Workflow, Network, ShieldCheck];
-  const colors = [['#9EDCFF', '#4785FF'], ['#E2BEFF', '#9B64F4'], ['#FFE2A8', '#F59E0B'], ['#FFB9D9', '#E967A3'], ['#9AF5E4', '#23BBA6'], ['#BDF5BB', '#51BD78']];
-  const weeks = [
-    ['Week 02', 'Understand the software underneath', 'Connect the browser, server, and data layer. Learn to reason about the system you are building.'],
-    ['Week 03', 'Give the model clear instructions', 'Explore prompting, structured outputs, tool calls, and streaming as parts of an application.'],
-    ['Week 04', 'Turn the idea into a working build', 'Bring interface design, AI coding agents, and persistent data into the same product.'],
-    ['Week 05', 'Coordinate agents that do useful work', 'Connect agent workflows and consider the guardrails and budgets they need.'],
-    ['Week 06', 'Connect knowledge and tools', 'Use retrieval, vector data, and MCP to connect your product to relevant information and external capabilities.'],
-    ['Week 07', 'Test it and put it online', 'Evaluate outputs, examine security, and deploy the product to a public URL.'],
-  ];
-  return <InformationSection id="learning-outcomes" eyebrow="Inside the online core" title="One product. Six weeks of progress." copy="Each week adds a capability to the product you committed to in Sri Lanka. The result is a connected application you can explain and demonstrate.">
-    <div className="program-card-grid program-card-grid-three">{weeks.map(([week,title,copy], i) => {
-      const Icon = icons[i];
-      return <article className="program-info-card" key={week}>
-        <Icon className="builder-fit-icon" size={60} strokeWidth={1.8} stroke={`url(#outcome-gradient-${i})`} aria-hidden="true">
-          <defs><linearGradient id={`outcome-gradient-${i}`} x1="0" y1="0" x2="1" y2="1"><stop stopColor={colors[i][0]}/><stop offset="1" stopColor={colors[i][1]}/></linearGradient></defs>
-        </Icon>
-        <span className="program-meta">{week}</span><h3>{title}</h3><p>{copy}</p>
-      </article>;
-    })}</div>
   </InformationSection>;
 }
 

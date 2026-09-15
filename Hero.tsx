@@ -7,7 +7,7 @@ import './FoundryGlass.css';
 import { useEffect, useRef, useState } from 'react';
 import { useInView, useReducedMotion } from 'framer-motion';
 import ProductBlueprint from './components/ui/product-blueprint';
-import { BuilderFit, BuildOutcomes, DemoExpectations, ProgramFAQ, Faculty, ProgramFees } from './components/ui/program-information';
+import { BuilderFit, DemoExpectations, ProgramFAQ, Faculty, ProgramFees } from './components/ui/program-information';
 import { Admissions } from './components/ui/admissions';
 import ScrollExpansionHero from './components/ui/scroll-expansion-hero';
 import { SiteNav } from './components/ui/site-nav';
@@ -140,7 +140,6 @@ export default function Hero({ applyHref }: HeroProps) {
       </section>
 
       <BuilderFit />
-      <BuildOutcomes />
       <Faculty />
       <DemoExpectations />
       <Admissions applyHref={applyHref} />
