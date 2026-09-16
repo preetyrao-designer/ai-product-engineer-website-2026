@@ -48,6 +48,7 @@ export default function JourneyExplorer() {
   const panelRefs = useRef<(HTMLDivElement | null)[]>([]);
   const [active, setActive] = useState(0);
   const [reduced, setReduced] = useState(false);
+  const isFirstTabScroll = useRef(true);
 
   useEffect(() => {
     const query = window.matchMedia('(prefers-reduced-motion: reduce)');
@@ -58,6 +59,9 @@ export default function JourneyExplorer() {
   }, []);
 
   useEffect(() => {
+    // Skip on mount — scrollIntoView on an off-screen tab bar would otherwise
+    // jump the whole page down to it before the visitor has scrolled there.
+    if (isFirstTabScroll.current) { isFirstTabScroll.current = false; return; }
     tabButtonRefs.current[active]?.scrollIntoView({ behavior: reduced ? 'auto' : 'smooth', block: 'nearest', inline: 'center' });
   }, [active, reduced]);
 
