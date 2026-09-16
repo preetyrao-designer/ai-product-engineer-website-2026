@@ -1,11 +1,10 @@
 import { useEffect, useRef, useState } from 'react';
 import { motion, useInView, useMotionValueEvent, useReducedMotion, useScroll, useTransform } from 'framer-motion';
-import { ArrowDown } from 'lucide-react';
 import './scroll-expansion-hero.css';
 
-const VIDEO = 'https://me7aitdbxq.ufs.sh/f/2wsMIGDMQRdYuZ5R8ahEEZ4aQK56LizRdfBSqeDMsmUIrJN1';
+const VIDEO = 'https://res.cloudinary.com/amwga9rc/video/upload/v1789584729/6973384_Azhimala_Aazhimal_Siva_Statue_1280x720.mp4';
 const POSTER = 'https://cdn.21st.dev/assets/localized/5bb1be92440e920def3eb36ad5a610d609240616cd8b11c0effe6b92bcafe06e.jpg';
-const BACKGROUND = 'https://me7aitdbxq.ufs.sh/f/2wsMIGDMQRdYMNjMlBUYHaeYpxduXPVNwf8mnFA61L7rkcoS';
+const BACKGROUND = 'https://res.cloudinary.com/amwga9rc/image/upload/v1789584131/sigiriya-lion-rock-mount-sri-lag-dawn-top-view.jpg';
 
 export default function ScrollExpansionHero() {
   const section = useRef<HTMLElement>(null);
@@ -42,10 +41,9 @@ export default function ScrollExpansionHero() {
         <video ref={video} src={VIDEO} poster={POSTER} muted loop playsInline preload="metadata" aria-label="Immersive experience video" />
         <div className="sri-expansion-shade" />
         <motion.p className="sri-expansion-intro" style={{ opacity: reduced ? 1 : introOpacity }}>Build with AI. Understand what you ship. <strong>Eight weeks</strong> with Masai, from five days in <strong>Sri Lanka</strong> through six weeks online to a 36-hour <strong>Bangalore</strong> hackathon. Leave with a <strong>live product</strong> people can use.</motion.p>
-        {!reduced && <p className="sri-expansion-hint">Scroll to explore <ArrowDown size={15} aria-hidden="true" /></p>}
       </motion.div>
       <div className="sri-expansion-copy" style={reduced ? { display: 'none' } : undefined}>
-        {showOpening && <motion.p className="sri-expansion-opening" style={{ opacity: openingOpacity }}>Have an immersive experience<br />in Sri Lanka with our Program</motion.p>}
+        {showOpening && <motion.span className="sri-expansion-chip" style={{ opacity: openingOpacity }}>Sri Lanka · Starts 13 Dec</motion.span>}
         <h2 id="sri-experience-title">
           <motion.span style={{ x: reduced ? 0 : left }}>AI Residency:</motion.span>
           <motion.span style={{ x: reduced ? 0 : right }}>Beyond Vibe Coding</motion.span>

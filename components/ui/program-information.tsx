@@ -1,6 +1,7 @@
 import { useState, type ReactNode } from 'react';
 import FacultyCarousel from './specials-linear-carousel';
 import BuilderFitGrid from './builder-fit-grid';
+import HourFilmstrip from './hour-filmstrip';
 import './program-information.css';
 
 function InformationSection({ id, eyebrow, title, copy, children }: { id: string; eyebrow: ReactNode; title: string; copy: string; children?: ReactNode }) {
@@ -22,37 +23,8 @@ export function BuilderFit() {
 }
 
 export function DemoExpectations() {
-  return <InformationSection id="demo-day" eyebrow="Demo Day" title="Show the product. Explain the decisions." copy="Qualifying builders take on a partner-company problem in a 36-hour Bangalore hackathon, with mentors in the room.">
-    <div className="demo-banner">
-      <img src="https://res.cloudinary.com/amwga9rc/image/upload/v1789555609/Screenshot_2026-09-16_at_4.16.26_PM.png" alt="Vidhana Soudha, Bangalore" loading="lazy" decoding="async" />
-      <div className="demo-banner-inner">
-        <span className="demo-banner-tag">BANGALORE · 3 DAYS</span>
-        <h3>36-hour hackathon.<span>In Bangalore.</span></h3>
-        <p>A partner company gives you a problem to solve. You have 36 hours, a team and mentors in the room.</p>
-      </div>
-    </div>
-    <div className="bar-gate">
-      <div className="bar-gate-label"><span className="the-bar-dot" aria-hidden="true" />The bar to qualify</div>
-      <h4>Clear this, and Bangalore is yours.</h4>
-      <p>Score at least 45% across two evaluations and attend 65% of sessions — live or recorded, recorded viewing counts in full. Everyone who clears both travels — there is no cap.</p>
-      <div className="bar-gate-stats">
-        <div className="bar-gate-stat"><span className="bar-gate-stat-value">45%+</span><span className="bar-gate-stat-label">Across two evaluations</span></div>
-        <div className="bar-gate-stat"><span className="bar-gate-stat-value">65%+</span><span className="bar-gate-stat-label">Session attendance</span></div>
-      </div>
-    </div>
-    <div className="bar-gate">
-      <div className="bar-gate-label"><span className="the-bar-dot" aria-hidden="true" />Completion criteria</div>
-      <div className="completion-rows">
-        <div className="completion-row">
-          <span className="completion-row-value">≥45</span>
-          <div><strong>Complete</strong><p>Credential awarded — <em>AI Product Building — Drydock, by Masai</em>.</p></div>
-        </div>
-        <div className="completion-row">
-          <span className="completion-row-value">&lt;45</span>
-          <div><strong>Incomplete</strong><p>Extension window to resubmit, one attempt.</p></div>
-        </div>
-      </div>
-    </div>
+  return <InformationSection id="demo-day" eyebrow="36-Hour Hackathon" title="Show the product. Explain the decisions." copy="Qualifying builders take on a partner-company problem in a 36-hour Bangalore hackathon, with mentors in the room.">
+    <HourFilmstrip />
   </InformationSection>;
 }
 

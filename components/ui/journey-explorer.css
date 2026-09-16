@@ -1,0 +1,53 @@
+.journey-explorer{max-width:1180px;margin:0 auto}
+
+.journey-tabs{display:flex;gap:4px;border-bottom:1px solid #ffffff14;position:sticky;top:0;z-index:20;background:#000;overflow-x:auto}
+.journey-tab{position:relative;flex:1 1 0;display:flex;flex-direction:column;align-items:flex-start;gap:5px;padding:18px 20px;background:none;border:none;cursor:pointer;text-align:left;min-width:150px}
+.journey-tab::after{content:"";position:absolute;left:0;bottom:-1px;width:100%;height:2px;background:#8ca7ff;opacity:0;transform:scaleX(.6);transition:opacity .4s cubic-bezier(.22,1,.36,1),transform .4s cubic-bezier(.22,1,.36,1)}
+.journey-tab-name{font-family:var(--font-display);font-size:18px;font-weight:600;letter-spacing:-.01em;color:#8b8b94;transition:color .3s ease}
+.journey-tab-meta{font-family:var(--font-mono);font-size:10.5px;letter-spacing:.08em;color:#6b7280;transition:color .3s ease}
+.journey-tab.active .journey-tab-name{color:#e9edff}
+.journey-tab.active .journey-tab-meta{color:#8ca7ff}
+.journey-tab.active::after{opacity:1;transform:scaleX(1)}
+
+.journey-panels{display:flex;flex-direction:column;gap:64px;margin-top:48px}
+.journey-panel{scroll-margin-top:170px}
+
+.journey-banner{position:relative;isolation:isolate;border-radius:24px;overflow:hidden;padding:40px 44px;min-height:280px;display:flex;flex-direction:column;justify-content:center;background-size:cover;background-position:center}
+.journey-banner::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,#05060aef 30%,#05060a8c 75%,#05060a40)}
+.journey-banner-plain{background:linear-gradient(135deg,#ffffff0a,#ffffff02),#0a0b10;border:1px solid #ffffff14}
+.journey-banner-plain::before{content:none}
+.journey-banner-tag{display:inline-block;align-self:flex-start;font-family:var(--font-mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#8ca7ff;background:#8ca7ff1f;border:1px solid #8ca7ff40;padding:7px 14px;border-radius:999px;margin-bottom:18px}
+.journey-banner h3{font-family:var(--font-display);font-size:clamp(28px,3.6vw,44px);font-weight:600;letter-spacing:-.025em;line-height:1.2;color:#e9edff}
+.journey-banner h3 span{color:#8ca7ff}
+.journey-banner p{margin-top:16px;font-size:14.5px;line-height:1.75;color:#c5cce3;max-width:560px}
+
+.journey-day-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:20px}
+.journey-day-card{padding:26px 24px;border-radius:18px;border:1px solid #ffffff14;background:linear-gradient(135deg,#ffffff08,#ffffff01),#090b10a3}
+.journey-day-tag{font-family:var(--font-mono);font-size:10.5px;letter-spacing:.06em;text-transform:uppercase;color:#929dbf}
+.journey-day-card h4{margin-top:10px;font-family:var(--font-display);font-size:17px;font-weight:600;letter-spacing:-.01em;color:#e9edff}
+.journey-day-card p{margin-top:10px;font-size:13.5px;line-height:1.7;color:#c5cce3}
+
+.journey-week-list{margin-top:20px;display:flex;flex-direction:column}
+.journey-week-item{display:grid;grid-template-columns:140px 1fr;gap:24px;padding:24px 4px;border-top:1px solid #ffffff12}
+.journey-week-item:first-child{border-top:none}
+.journey-week-range{font-family:var(--font-mono);font-size:12px;letter-spacing:.05em;color:#8ca7ff;padding-top:2px}
+.journey-week-item h4{font-family:var(--font-display);font-size:16px;font-weight:600;letter-spacing:-.01em;color:#e9edff}
+.journey-week-item p{margin-top:6px;font-size:13.5px;line-height:1.7;color:#c5cce3}
+.journey-week-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.journey-week-tags span{padding:7px 14px;border-radius:999px;border:1px solid #ffffff1f;font-size:12px;color:#929dbf}
+
+@media(max-width:900px){
+  .journey-day-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .journey-banner{padding:30px}
+  .journey-week-item{grid-template-columns:1fr;gap:10px}
+}
+@media(max-width:600px){
+  .journey-tabs{gap:2px}
+  .journey-tab{padding:12px 8px;min-width:0}
+  .journey-tab-name{font-size:15px}
+  .journey-tab-meta{font-size:9.5px}
+  .journey-day-grid{grid-template-columns:1fr}
+  .journey-banner{padding:24px;min-height:auto}
+  .journey-banner h3{font-size:26px}
+  .journey-panels{gap:48px;margin-top:32px}
+}
