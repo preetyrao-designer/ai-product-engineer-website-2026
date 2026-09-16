@@ -1,7 +1,7 @@
 import { Facebook, Instagram, Linkedin, X, Youtube } from 'lucide-react';
 import './site-footer.css';
 
-const LOGO = 'https://cdn.masaischool.com/general/figma/2026/09/10/leap-by-masai-lockup-400w-1789056445540.webp';
+const LOGO = '/images/leap-logo.svg';
 
 const SOCIALS = [
   { label: 'X', Icon: X, href: 'https://x.com/masaischool' },
@@ -27,7 +27,7 @@ export function SiteFooter() {
   return <footer className="site-footer">
     <div className="site-footer-top">
       <div className="site-footer-brand">
-        <img className="site-footer-logo" src={LOGO} alt="LEAP by Masai" loading="lazy" decoding="async" width={200} height={92} />
+        <img className="site-footer-logo" src={LOGO} alt="LEAP by Masai" loading="lazy" decoding="async" width={87} height={38} />
         <div className="site-footer-follow">
           <span>Follow us</span>
           <div className="site-footer-social">
@@ -43,7 +43,7 @@ export function SiteFooter() {
       </div>
     </div>
     <div className="site-footer-bottom">
-      <p>© {new Date().getFullYear()} Masai School. Enough tech to build properly – and a live product to prove it.</p>
+      <p>© {new Date().getFullYear()} Masai School.</p>
       <div className="site-footer-legal">{LEGAL.map(([label, href]) => <a key={label} href={href}>{label}</a>)}</div>
     </div>
   </footer>;

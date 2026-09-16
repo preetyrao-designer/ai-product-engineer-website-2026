@@ -7,6 +7,7 @@ import './site-nav.css';
 const LINKS = [
   { label: 'Curriculum', href: '#curriculum' },
   { label: 'Faculty', href: '#faculty' },
+  { label: 'Demo Day', href: '#demo-day' },
   { label: 'Admission', href: '#admissions' },
   { label: 'Fees', href: '#fees' },
   { label: 'FAQ', href: '#faq' },
@@ -23,7 +24,9 @@ export function SiteNav({ applyHref, revealAfter = 'curriculum' }: { applyHref: 
     let frame = 0;
     const check = () => {
       frame = 0;
-      setVisible(target.getBoundingClientRect().top <= 0);
+      // Stay hidden for the whole section (it has its own sticky tab bar) —
+      // only reveal once its bottom has scrolled past the viewport top.
+      setVisible(target.getBoundingClientRect().bottom <= 0);
     };
     const schedule = () => { if (!frame) frame = window.requestAnimationFrame(check); };
     window.addEventListener('scroll', schedule, { passive: true });
@@ -56,8 +59,7 @@ export function SiteNav({ applyHref, revealAfter = 'curriculum' }: { applyHref: 
         {menuOpen ? <X size={18} aria-hidden="true" /> : <Menu size={18} aria-hidden="true" />}
       </button>
       <a className="site-nav-brand" href="#top" aria-label="LEAP by Masai, home">
-        <span className="site-nav-brand-word">LEAP<span className="site-nav-brand-dot">.</span></span>
-        <span className="site-nav-brand-sub">By Masai</span>
+        <img className="site-nav-brand-logo" src="/images/leap-logo.svg" alt="LEAP by Masai" width={87} height={38} />
       </a>
       <ul className="site-nav-links">
         {LINKS.map(link => <li key={link.href}><a href={link.href}>{link.label}</a></li>)}

@@ -9,7 +9,7 @@ const steps = [
   { title: "Counselling", Icon: MessagesSquare, copy: "A conversation with the team about the program, the commitment, the travel, and whether this is the right fit for what you want to build.", tag: "Find your fit" },
   { title: "Seat blocking · ₹5,000", Icon: Armchair, copy: "₹5,000 holds your seat in the cohort. Seats are limited and released in the order they are blocked.", tag: "Reserve your place" },
   { title: "Full fee & onboarding", Icon: BookOpenCheck, copy: "Balance payment, then onboarding: cohort access, pre-reading, and travel and visa guidance for the residency.", tag: "Get ready to build" },
-  { title: "13–17 December · Sri Lanka", Icon: PlaneLanding, copy: "Start with five immersive days in Sri Lanka, continue building online for six weeks, and finish with a 36-hour build in Bengaluru. One product, developed throughout your eight-week journey.", tag: "The journey begins" },
+  { title: "13–17 December · Sri Lanka", Icon: PlaneLanding, copy: "Start with five immersive days in Sri Lanka, continue building online for six weeks, and finish with a 36-hour build in Bangalore. One product, developed throughout your eight-week journey.", tag: "The journey begins" },
 ];
 
 export function Admissions({ applyHref }: { applyHref: string }) {
@@ -21,7 +21,7 @@ export function Admissions({ applyHref }: { applyHref: string }) {
     </header>
     <Timeline data={steps.map(({ title, Icon, copy, tag }, i) => ({ title, titleContent: title === '13–17 December · Sri Lanka' ? <>13–17 December · <span className="admission-marker">Sri Lanka</span></> : undefined, content: <>
       <p>{copy}</p>
-      {i === steps.length - 1 && <p className="admission-duration-summary">5 days in Sri Lanka · 6 weeks online · 36 hours in Bengaluru</p>}
+      {i === steps.length - 1 && <p className="admission-duration-summary">5 days in Sri Lanka · 6 weeks online · 36 hours in Bangalore</p>}
       <div className="admission-card-footer"><span className="foundry-glass-chip"><Icon size={15} aria-hidden="true"/>{tag}</span>{i === 0 && <a href={applyHref}>Apply Now <ArrowUpRight size={16} aria-hidden="true"/></a>}</div>
     </> }))}/>
     <div className="admissions-details">
