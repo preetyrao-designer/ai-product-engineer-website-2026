@@ -24,17 +24,6 @@ export function Admissions({ applyHref }: { applyHref: string }) {
       {i === steps.length - 1 && <p className="admission-duration-summary">5 days in Sri Lanka · 6 weeks online · 36 hours in Bangalore</p>}
       {i === 0 && <div className="admission-card-footer"><a href={applyHref}>Apply Now <ArrowUpRight size={16} aria-hidden="true"/></a></div>}
     </> }))}/>
-    <div className="admissions-details">
-      <article><h3>What you pay, and when</h3><dl>
-        <div className="admissions-application-highlight"><dt><strong>₹999</strong> Application</dt><dd>Paid with the form, before review.</dd></div>
-        <div><dt><strong>₹5,000</strong> Seat blocking</dt><dd>Paid after counselling to hold your place. Adjusted against the full program fee.</dd></div>
-      </dl></article>
-      <article><h3>Before you apply</h3><ul>
-        <li>Seats are limited and applications are reviewed on a rolling basis.</li>
-        <li>The residency involves international travel. Plan for a passport and visa.</li>
-        <li>Counselling happens before any large payment.</li>
-      </ul></article>
-    </div>
     <div className="admissions-actions">
       <a href={applyHref} className="admissions-glass-cta admissions-glass-cta-primary">Apply Now <ArrowUpRight size={18} aria-hidden="true"/></a>
     </div>

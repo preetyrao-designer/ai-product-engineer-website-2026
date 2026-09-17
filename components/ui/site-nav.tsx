@@ -14,20 +14,26 @@ const LINKS = [
   { label: 'FAQ', href: '#faq' },
 ];
 
-export function SiteNav({ applyHref, revealAfter = 'curriculum' }: { applyHref: string; revealAfter?: string }) {
+export function SiteNav({ applyHref, revealAfter = 'curriculum', hideDuring }: { applyHref: string; revealAfter?: string; hideDuring?: string }) {
   const [visible, setVisible] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const navRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
     const target = document.getElementById(revealAfter);
+    const hideTarget = hideDuring ? document.getElementById(hideDuring) : null;
     if (!target) return;
     let frame = 0;
     const check = () => {
       frame = 0;
-      // Stay hidden for the whole section (it has its own sticky tab bar) —
-      // only reveal once its bottom has scrolled past the viewport top.
-      setVisible(target.getBoundingClientRect().bottom <= 0);
+      const revealed = target.getBoundingClientRect().bottom <= 0;
+      // Hide again for the duration of a section with its own sticky tab bar,
+      // to avoid the two overlapping — reappears once that section is passed.
+      const hidden = hideTarget ? (() => {
+        const rect = hideTarget.getBoundingClientRect();
+        return rect.top <= 0 && rect.bottom > 0;
+      })() : false;
+      setVisible(revealed && !hidden);
     };
     const schedule = () => { if (!frame) frame = window.requestAnimationFrame(check); };
     window.addEventListener('scroll', schedule, { passive: true });
@@ -38,7 +44,7 @@ export function SiteNav({ applyHref, revealAfter = 'curriculum' }: { applyHref: 
       window.removeEventListener('scroll', schedule);
       window.removeEventListener('resize', schedule);
     };
-  }, [revealAfter]);
+  }, [revealAfter, hideDuring]);
 
   useEffect(() => {
     if (!menuOpen) return;

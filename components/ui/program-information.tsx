@@ -23,9 +23,14 @@ export function BuilderFit() {
 }
 
 export function DemoExpectations() {
-  return <InformationSection id="demo-day" eyebrow="The 36-Hour Hackathon" title={<>Your final test is<br />a real company's problem.</>} copy="After seven weeks of building, the qualifying participants arrive in Bangalore. A partner company brings a real problem, and your team has 36 hours to build a working solution and demo it to them.">
-    <HourFilmstrip />
-  </InformationSection>;
+  return <section id="demo-day" className="program-information" aria-labelledby="demo-day-title">
+    <HourFilmstrip
+      headingId="demo-day-title"
+      eyebrow="The 36-Hour Hackathon"
+      title={<>Your final test is<br />a real company's problem.</>}
+      copy="After seven weeks of building, the qualifying participants arrive in Bangalore. A partner company brings a real problem, and your team has 36 hours to build a working solution and demo it to them."
+    />
+  </section>;
 }
 
 const FAQ_CATEGORIES = ['Program', 'Eligibility & Application', 'Bangalore & Outcomes', 'Travel & Residency', 'Fees & Payment'] as const;

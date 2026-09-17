@@ -26,12 +26,8 @@ const PHASES = [
     copy: 'Structured online sessions on weekends, digging deeper into the capabilities of LLMs. Every week has a hands-on lab where you implement what you learn.',
     kind: 'weeks' as const,
     weeks: [
-      { range: 'Week 02', title: 'How software actually works', copy: 'Read code and understand what an AI agent built for you. Then what an LLM is, why models hallucinate, and how to choose one for your product.', tags: ['Reading code', 'LLMs', 'Model choice'] },
-      { range: 'Week 03', title: 'Controlling AI', copy: 'Prompting, context and structured outputs. Then why vibe coding fails: planning before prompting, reusable skills, and Git so nothing is lost.', tags: ['Prompting', 'Planning', 'Git'] },
-      { range: 'Week 04', title: 'Idea to working product', copy: 'Turn your idea into a spec and a design with Claude Design and Google Stitch, then into a running app with Cursor, Claude Code or Codex, backed by a real database. First evaluation.', tags: ['Product spec', 'Coding agents', 'Databases'] },
-      { range: 'Week 05', title: 'From agents to agent systems', copy: 'What makes something an agent, when one is worth building, and why agents fail. Then several agents working together, and automations in n8n.', tags: ['Agents', 'Multi-agent', 'n8n'] },
-      { range: 'Week 06', title: 'Your data, and the outside world', copy: 'Ground your product in your own documents with citations, connect it to real systems over MCP, and keep it working when an API fails.', tags: ['RAG', 'MCP', 'Reliability'] },
-      { range: 'Week 07', title: 'Prove it, then ship it', copy: 'Test it with an eval set, protect it against prompt injection and data leaks, then deploy it to a public URL. Final evaluation.', tags: ['Evals', 'Security', 'Deployment'] },
+      { range: 'Weeks 02–04', title: 'Understand the layers. Build with intention.', copy: 'Connect interfaces, data, and LLMs. Learn to work with AI coding agents while understanding the architecture behind what you ship.', tags: ['Web & data', 'LLMs & prompting', 'AI coding agents'] },
+      { range: 'Weeks 05–07', title: 'Give your product the power to act.', copy: 'Bring tools, knowledge, and agents into the same product. Connect retrieval, multi-agent workflows, and MCP, then evaluate and deploy your application.', tags: ['RAG & MCP', 'Multi-agent systems', 'Evaluation & deployment'] },
     ],
   },
   {

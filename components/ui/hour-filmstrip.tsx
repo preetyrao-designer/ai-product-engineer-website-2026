@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState, type ReactNode } from 'react';
 import { motion, useMotionValueEvent, useReducedMotion, useScroll, useTransform } from 'framer-motion';
 import './hour-filmstrip.css';
 
@@ -17,7 +17,7 @@ function activeIndexForHour(hour: number) {
   return index;
 }
 
-export default function HourFilmstrip() {
+export default function HourFilmstrip({ eyebrow, title, copy, headingId }: { eyebrow?: ReactNode; title?: ReactNode; copy?: ReactNode; headingId?: string }) {
   const wrapRef = useRef<HTMLDivElement>(null);
   const viewportRef = useRef<HTMLDivElement>(null);
   const trackRef = useRef<HTMLDivElement>(null);
@@ -90,20 +90,14 @@ export default function HourFilmstrip() {
   const showProgress = scrubbing ? progressWidth : `${touchProgress * 100}%`;
 
   return <div className="hour-filmstrip-wrap">
-    <div className="hour-filmstrip-bar" style={{ backgroundImage: 'url(/images/takeover/the-bar-banner.jpg)' }}>
-      <span className="hour-filmstrip-bar-tag">The bar</span>
-      <h3>What it takes to qualify for Bangalore.</h3>
-      <p>Attend at least 65% of the sessions and score at least 45% across two evaluations. Recorded viewing counts.</p>
-      <div className="hour-filmstrip-bar-chips">
-        <span className="hour-filmstrip-bar-chip">Overall score <strong>≥ 45%</strong></span>
-        <span className="hour-filmstrip-bar-chip">Attendance <strong>≥ 65%</strong></span>
-        <span className="hour-filmstrip-bar-chip">Week 04 evaluation <strong>45%</strong></span>
-        <span className="hour-filmstrip-bar-chip">Week 07 evaluation <strong>55%</strong></span>
-      </div>
-    </div>
-
     <div className={`hour-filmstrip-scroll-space${scrubbing ? ' is-scrubbing' : ''}`} ref={wrapRef}>
     <div className="hour-filmstrip-pin">
+      {(eyebrow || title || copy) && <div className="hour-filmstrip-heading">
+        {eyebrow && <p className="admissions-eyebrow">{eyebrow}</p>}
+        {title && <h2 id={headingId}>{title}</h2>}
+        {copy && <p className="admissions-intro-copy">{copy}</p>}
+      </div>}
+
       <div className="hour-filmstrip-hr">
         <span className="hour-filmstrip-hr-num">{hour}</span>
         <span className="hour-filmstrip-hr-unit">HR&nbsp;/&nbsp;{TOTAL_HOURS}</span>
@@ -124,6 +118,18 @@ export default function HourFilmstrip() {
 
       <div className="hour-filmstrip-progress"><motion.div className="hour-filmstrip-progress-fill" style={{ width: showProgress }} /></div>
     </div>
+    </div>
+
+    <div className="hour-filmstrip-bar" style={{ backgroundImage: 'url(/images/takeover/the-bar-banner.jpg)' }}>
+      <span className="hour-filmstrip-bar-tag">The gate</span>
+      <h3>What it takes to qualify for Bangalore.</h3>
+      <p>Attend at least 65% of the sessions and score at least 45% across two evaluations. Recorded viewing counts.</p>
+      <div className="hour-filmstrip-bar-chips">
+        <span className="hour-filmstrip-bar-chip">Overall score <strong>≥ 45%</strong></span>
+        <span className="hour-filmstrip-bar-chip">Attendance <strong>≥ 65%</strong></span>
+        <span className="hour-filmstrip-bar-chip">Week 04 evaluation <strong>45%</strong></span>
+        <span className="hour-filmstrip-bar-chip">Week 07 evaluation <strong>55%</strong></span>
+      </div>
     </div>
   </div>;
 }

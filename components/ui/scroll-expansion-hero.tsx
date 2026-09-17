@@ -32,7 +32,7 @@ export default function ScrollExpansionHero() {
     else element.pause();
   }, [visible, reduced]);
 
-  return <section ref={section} className={`sri-expansion${reduced ? ' sri-expansion-reduced' : ''}`} aria-labelledby="sri-experience-title">
+  return <section id="hero" ref={section} className={`sri-expansion${reduced ? ' sri-expansion-reduced' : ''}`} aria-labelledby="sri-experience-title">
     <div className="sri-expansion-stage">
       <motion.div className="sri-expansion-background" style={{ opacity: reduced ? 0.35 : backgroundOpacity }}>
         <img src={BACKGROUND} alt="" loading="lazy" />

@@ -19,7 +19,7 @@ export type HeroProps = { applyHref: string; seatHref?: string };
 
 export default function Hero({ applyHref }: HeroProps) {
   return <div className="drydock-theme overflow-clip" style={{ fontFamily: 'var(--font-sans)' }}>
-    <SiteNav applyHref={applyHref} />
+    <SiteNav applyHref={applyHref} revealAfter="hero" hideDuring="curriculum" />
     <main id="drydock">
       <ScrollExpansionHero />
       <div className="drydock-dotted-background">
