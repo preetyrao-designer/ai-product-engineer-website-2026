@@ -123,12 +123,10 @@ export default function HourFilmstrip({ eyebrow, title, copy, headingId }: { eye
     <div className="hour-filmstrip-bar" style={{ backgroundImage: 'url(/images/takeover/the-bar-banner.jpg)' }}>
       <span className="hour-filmstrip-bar-tag">The gate</span>
       <h3>What it takes to qualify for Bangalore.</h3>
-      <p>Attend at least 65% of the sessions and score at least 45% across two evaluations. Recorded viewing counts.</p>
+      <p>Score at least 45% across the three evaluations and attend at least 65% of the sessions.<br />Everyone who meets both criteria will receive an invitation to the hackathon in Bangalore.</p>
       <div className="hour-filmstrip-bar-chips">
         <span className="hour-filmstrip-bar-chip">Overall score <strong>≥ 45%</strong></span>
         <span className="hour-filmstrip-bar-chip">Attendance <strong>≥ 65%</strong></span>
-        <span className="hour-filmstrip-bar-chip">Week 04 evaluation <strong>45%</strong></span>
-        <span className="hour-filmstrip-bar-chip">Week 07 evaluation <strong>55%</strong></span>
       </div>
     </div>
   </div>;

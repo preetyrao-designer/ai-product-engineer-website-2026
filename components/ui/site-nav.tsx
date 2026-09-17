@@ -66,7 +66,7 @@ export function SiteNav({ applyHref, revealAfter = 'curriculum', hideDuring }: {
         {menuOpen ? <X size={18} aria-hidden="true" /> : <Menu size={18} aria-hidden="true" />}
       </button>
       <a className="site-nav-brand" href="#top" aria-label="LEAP by Masai, home">
-        <img className="site-nav-brand-logo" src="/images/leap-logo.svg" alt="LEAP by Masai" width={87} height={38} />
+        <img className="site-nav-brand-logo" src="/images/leap-ai-residency-logo.svg" alt="LEAP: AI Residency" width={923} height={140} />
       </a>
       <ul className="site-nav-links">
         {LINKS.map(link => <li key={link.href}><a href={link.href}>{link.label}</a></li>)}

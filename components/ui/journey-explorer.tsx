@@ -12,11 +12,11 @@ const PHASES = [
     copy: 'Meet your fellow builders. Get into the rhythm of building with a small MVP. Explore Sri Lanka, and commit to a capstone product.',
     kind: 'cards' as const,
     cards: [
-      { tag: 'Day 01', title: 'Meet the builders', copy: 'Why AI has changed what non-technical people can build, the whole cohort in one room, and an evening with a senior technology leader from an AI-first company.' },
+      { tag: 'Day 01', title: 'Meet the builders', copy: 'Why AI has changed what non-technical people can build, the whole cohort in one room, and an evening with a senior technology leader.' },
       { tag: 'Day 02', title: 'Build Day', copy: 'Pick a small idea in the morning and put it live on a URL by evening. Then demo it to everyone.' },
       { tag: 'Day 03', title: 'Tech Foundations 101', copy: 'Dig deeper into how any content is served on a website or an app, from servers and APIs. Followed by a lab that eases you into the world of APIs.' },
       { tag: 'Day 04', title: 'Explore Sri Lanka', copy: 'A guided day on the Sri Lankan coast with the cohort, then an evening on where AI really is, past the headlines.' },
-      { tag: 'Day 05', title: 'Choose what you will build', copy: 'Design your product’s data model, meet your pod and mentor, and commit to the capstone you will build by Demo Day.' },
+      { tag: 'Day 05', title: 'Choose what you will build', copy: 'Design your product’s data model, and meet your pod and mentor.' },
     ],
   },
   {
@@ -33,13 +33,13 @@ const PHASES = [
   {
     id: 'bangalore', label: 'Bangalore', meta: '3 days · Hackathon',
     tag: 'PHASE 03 · BANGALORE · 3 DAYS', image: BANGALORE_IMAGE as string | null,
-    title: 'Build for a real company.', accent: 'In one weekend.' as string | null,
-    copy: 'A partner company brings a real problem on Friday evening. Your team builds a working solution through the weekend and demos it to them on Sunday.',
+    title: 'Step into a real engineering challenge.', accent: 'A real company problem.' as string | null,
+    copy: 'Take on a real-world problem, build a solution with your team, and compete for a spot in the top 5.',
     kind: 'cards' as const,
     cards: [
-      { tag: 'Friday evening · The brief', title: 'Meet the problem', copy: 'The partner company presents its problem at the Masai office. Teams of three or four form, and a mentor reviews your plan before anyone builds.' },
-      { tag: 'Saturday · The build', title: 'Build through the day', copy: 'Mentors on the floor in shifts. Three checkpoints: something running, the main flow working, then no new features.' },
-      { tag: 'Sunday · Demo Day', title: 'Demo it to the company', copy: 'Deploy and run your security checklist, then demo live to the company’s own team and answer their questions.' },
+      { tag: 'Day 1 · The Brief', title: 'Understand the problem', copy: 'Get the company problem statement, define the scope, and plan your approach.' },
+      { tag: 'Day 2 · The Build', title: 'Build the solution', copy: 'Build, test, iterate, and refine your solution with your team.' },
+      { tag: 'Day 3 · The Final 5', title: 'Present. Connect. Learn.', copy: 'The top 5 selected teams present their solutions to the companies, followed by an AI Conference featuring industry leaders and builders.' },
     ],
   },
 ];

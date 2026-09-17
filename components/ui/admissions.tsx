@@ -4,10 +4,10 @@ import { ArrowUpRight } from "lucide-react";
 import { Timeline } from "./timeline";
 
 const steps = [
-  { title: "Submit your application", copy: "Pay ₹999 and tell us about your work and what you want to build. This puts you in the review pool." },
+  { title: "Submit your application", copy: "Pay ₹999 (non-refundable) and tell us about your work and what you want to build. This puts you in the review pool." },
   { title: "Applications are reviewed", copy: "We look at intent, ambition and whether this is the right environment for what you want to build." },
   { title: "Attend your counselling", copy: "A conversation with the team about the program, the commitment and the travel." },
-  { title: "Reserve your seat with ₹5,000", copy: "Seats are limited and released in the order they are blocked. Adjusted against the full program fee." },
+  { title: "Reserve your seat with ₹5,000", copy: "Non-refundable, but adjusted against the full program fee. Seats are limited and released in the order they are blocked." },
   { title: "Complete your enrolment", copy: "Pay the balance, then onboarding: cohort access, pre-reading, travel and visa guidance." },
   { title: "06 Jan 2027", copy: "Phase 1 begins: five days in Sri Lanka, then six weeks online, then a weekend hackathon in Bangalore." },
 ];

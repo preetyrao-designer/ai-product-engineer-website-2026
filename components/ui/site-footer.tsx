@@ -1,7 +1,7 @@
 import { Facebook, Instagram, Linkedin, X, Youtube } from 'lucide-react';
 import './site-footer.css';
 
-const LOGO = '/images/leap-logo.svg';
+const LOGO = '/images/leap-by-masai-ai-residency-logo.svg';
 
 const SOCIALS = [
   { label: 'X', Icon: X, href: 'https://x.com/masaischool' },
@@ -27,8 +27,7 @@ export function SiteFooter() {
   return <footer className="site-footer">
     <div className="site-footer-top">
       <div className="site-footer-brand">
-        <img className="site-footer-logo" src={LOGO} alt="LEAP by Masai" loading="lazy" decoding="async" width={87} height={38} />
-        <p className="site-footer-tagline">AI Residency, by Masai School.</p>
+        <img className="site-footer-logo" src={LOGO} alt="LEAP by Masai: AI Residency" loading="lazy" decoding="async" width={673} height={141} />
         <div className="site-footer-follow">
           <span>Follow us</span>
           <div className="site-footer-social">

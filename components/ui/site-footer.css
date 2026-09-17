@@ -2,8 +2,7 @@
 .site-footer-top{display:flex;flex-wrap:wrap;justify-content:space-between;gap:64px}
 
 .site-footer-brand{display:flex;flex-direction:column;gap:28px}
-.site-footer-logo{display:block;width:100px;height:auto}
-.site-footer-tagline{margin:0;font-size:13px;color:#929dbf}
+.site-footer-logo{display:block;width:180px;height:auto}
 .site-footer-follow{display:flex;flex-direction:column;gap:14px}
 .site-footer-follow>span{font-family:var(--font-mono);font-size:10px;text-transform:uppercase;letter-spacing:.17em;color:#929dbf}
 .site-footer-social{display:flex;gap:10px}
