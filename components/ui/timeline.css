@@ -13,8 +13,7 @@
 .admission-step-card,.admissions-details>article{border:1px solid #ffffff0e;border-radius:28px;background:linear-gradient(135deg,#ffffff08,#ffffff02),#090b10bb;box-shadow:inset 0 1px 0 #ffffff0b;backdrop-filter:blur(16px);padding:36px}
 .admission-step-card h3{font-size:clamp(24px,2.5vw,32px);font-weight:500;letter-spacing:-.025em;margin-bottom:18px;color:#e9edff}
 .admission-step-card>p{font-size:15px;line-height:1.85;max-width:540px;color:#c5cce3}
-.admission-card-footer{margin-top:32px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:20px}
-.admission-card-footer .foundry-glass-chip{display:inline-flex;align-items:center;gap:8px;padding:9px 14px;font-size:11px;color:#b6bdd2}
+.admission-card-footer{margin-top:32px}
 .admission-card-footer a{display:inline-flex;align-items:center;gap:10px;font-size:13px;color:#a9bdff}
 .admissions-details{display:grid;grid-template-columns:1fr 1fr;gap:24px;margin:100px auto 0;max-width:1080px}
 .admissions-details h3{font-size:11px;font-family:var(--font-mono);text-transform:uppercase;letter-spacing:.13em;color:#929dbf;margin-bottom:32px}
@@ -31,12 +30,10 @@
 
 .admissions-details{scroll-margin-top:60px}
 .admissions-actions{display:flex;justify-content:center;flex-wrap:wrap;gap:16px;margin:40px 0 80px}
-.admissions-glass-cta{display:inline-flex;align-items:center;justify-content:center;gap:22px;min-height:54px;padding:14px 26px;border-radius:999px;border:1px solid #ffffff22;background:linear-gradient(135deg,#ffffff14,#ffffff04),#0a0c1280;box-shadow:inset 0 1px 0 #ffffff22,0 8px 24px #0003;backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);color:#e9edff;font-size:14px;font-weight:600;transition:background-color .2s,border-color .2s,box-shadow .2s}
+.admissions-glass-cta{display:inline-flex;align-items:center;justify-content:center;gap:7px;min-height:54px;padding:14px 26px;border-radius:999px;border:1px solid #ffffff22;background:linear-gradient(135deg,#ffffff14,#ffffff04),#0a0c1280;box-shadow:inset 0 1px 0 #ffffff22,0 8px 24px #0003;backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);color:#e9edff;font-size:14px;font-weight:600;transition:background-color .2s,border-color .2s,box-shadow .2s}
 .admissions-glass-cta-primary{background-color:#8ca7ff20;border-color:#a9bdff50}
 .admissions-glass-cta:hover{background-color:#ffffff15;border-color:#ffffff55;box-shadow:inset 0 1px 0 #ffffff35,0 8px 28px #0004}
 @media(max-width:480px){.admissions-glass-cta{width:100%;max-width:320px}}
 @media(prefers-reduced-motion:reduce){.admissions-glass-cta{transition:none}}
-.admission-marker{position:relative;display:inline-block;white-space:nowrap;isolation:isolate}
-.admission-marker::after{content:"";position:absolute;left:-.035em;right:-.045em;bottom:-.055em;height:.18em;background:#8ca7ff;z-index:-1;transform:rotate(-1.5deg);clip-path:polygon(1% 20%,17% 9%,43% 18%,70% 3%,98% 12%,100% 73%,78% 94%,49% 80%,20% 100%,0 81%);border-radius:3px}
 #admissions > .section-intro{margin-bottom:80px}
 .admission-step-card .admission-duration-summary{font-size:12px;line-height:1.8;color:#8ca7ff;margin-top:20px}

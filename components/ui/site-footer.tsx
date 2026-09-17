@@ -28,6 +28,7 @@ export function SiteFooter() {
     <div className="site-footer-top">
       <div className="site-footer-brand">
         <img className="site-footer-logo" src={LOGO} alt="LEAP by Masai" loading="lazy" decoding="async" width={87} height={38} />
+        <p className="site-footer-tagline">AI Residency, by Masai School.</p>
         <div className="site-footer-follow">
           <span>Follow us</span>
           <div className="site-footer-social">
@@ -43,7 +44,7 @@ export function SiteFooter() {
       </div>
     </div>
     <div className="site-footer-bottom">
-      <p>© {new Date().getFullYear()} Masai School.</p>
+      <p>© {new Date().getFullYear()} Masai School. AI Residency program.</p>
       <div className="site-footer-legal">{LEGAL.map(([label, href]) => <a key={label} href={href}>{label}</a>)}</div>
     </div>
   </footer>;

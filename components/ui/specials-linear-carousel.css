@@ -1,5 +1,5 @@
-.faculty-carousel{max-width:1200px;margin:0 auto}
-.faculty-carousel-track{display:flex;gap:16px;overflow-x:auto;overscroll-behavior-x:contain;scrollbar-width:none;cursor:grab;padding:4px 0 16px;touch-action:pan-x pan-y;user-select:none}
+.faculty-carousel{width:100vw;position:relative;left:50%;right:50%;margin-left:-50vw;margin-right:-50vw}
+.faculty-carousel-track{display:flex;gap:16px;overflow-x:auto;overscroll-behavior-x:contain;scrollbar-width:none;cursor:grab;padding:4px 24px 16px;touch-action:pan-x pan-y;user-select:none}
 .faculty-carousel-track::-webkit-scrollbar{display:none}
 .faculty-carousel-track:active{cursor:grabbing}
 .faculty-carousel-card{position:relative;flex:0 0 320px;height:430px;overflow:hidden;border-radius:24px;background:#111318;border:1px solid #ffffff16;isolation:isolate}
@@ -11,9 +11,5 @@
 .faculty-company-icon img{width:100%;height:100%;object-fit:contain}
 .faculty-carousel-caption h3{font-family:var(--font-display);font-size:28px;line-height:1.15;letter-spacing:-.025em;font-weight:600;color:#fff;margin:12px 0 0}
 .faculty-carousel-role{font-size:13px;line-height:1.55;color:#e0e4ee;margin-top:12px;min-height:41px}
-.faculty-carousel-controls{display:flex;justify-content:center;gap:12px;margin-top:20px}
-.faculty-carousel-controls button{display:flex;align-items:center;justify-content:center;width:42px;height:42px;border-radius:50%;background:#11141b;border:1px solid #ffffff25;color:#d5deff;transition:background .2s}
-.faculty-carousel-controls button:hover:not(:disabled){background:#8ca7ff30}
-.faculty-carousel-controls button:disabled{opacity:.3;cursor:default}
-.faculty-carousel-track:focus-visible,.faculty-carousel-controls button:focus-visible{outline:2px solid #8ca7ff;outline-offset:4px}
+.faculty-carousel-track:focus-visible{outline:2px solid #8ca7ff;outline-offset:4px}
 @media(max-width:600px){.faculty-carousel-card{flex-basis:min(280px,80vw);height:380px}.faculty-carousel-caption{padding:22px}.faculty-carousel-caption h3{font-size:25px}}

@@ -1,6 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
 import { motion, useReducedMotion } from 'framer-motion';
-import { ChevronLeft, ChevronRight } from 'lucide-react';
 import './specials-linear-carousel.css';
 
 export interface FacultyProfile { name: string; company: string; role: string; image: string }
@@ -17,19 +16,6 @@ export default function FacultyCarousel({ people }: { people: FacultyProfile[] }
   const hovering = useRef(false);
   const pausedUntil = useRef(0);
   const reduced = useReducedMotion();
-  const [edges, setEdges] = useState({ left: false, right: true });
-  const updateEdges = () => {
-    const el = track.current;
-    if (el) setEdges({ left: el.scrollLeft > 2, right: el.scrollLeft + el.clientWidth < el.scrollWidth - 2 });
-  };
-  useEffect(() => {
-    const el = track.current;
-    if (!el) return;
-    const observer = new ResizeObserver(updateEdges);
-    observer.observe(el);
-    updateEdges();
-    return () => observer.disconnect();
-  }, []);
   useEffect(() => {
     if (reduced) return;
     const el = track.current;
@@ -53,7 +39,7 @@ export default function FacultyCarousel({ people }: { people: FacultyProfile[] }
     el.scrollBy({ left: direction * (width + 16), behavior: reduced ? 'instant' : 'smooth' });
   };
   return <div className="faculty-carousel" role="region" aria-label="Faculty profiles" aria-roledescription="carousel">
-    <div className="faculty-carousel-track" ref={track} tabIndex={0} onScroll={updateEdges}
+    <div className="faculty-carousel-track" ref={track} tabIndex={0}
       onMouseEnter={() => { hovering.current = true; }} onMouseLeave={() => { hovering.current = false; }}
       onKeyDown={event => { if (event.key === 'ArrowRight' || event.key === 'ArrowLeft') { event.preventDefault(); move(event.key === 'ArrowRight' ? 1 : -1); } }}
       onPointerDown={event => { if (event.pointerType !== 'mouse' || event.button !== 0) return; drag.current = { x: event.clientX, scroll: event.currentTarget.scrollLeft }; event.currentTarget.setPointerCapture(event.pointerId); }}
@@ -67,10 +53,6 @@ export default function FacultyCarousel({ people }: { people: FacultyProfile[] }
           <h3>{person.name}</h3><p className="faculty-carousel-role">{person.role}</p>
         </div>
       </motion.article>)}
-    </div>
-    <div className="faculty-carousel-controls">
-      <button type="button" onClick={() => move(-1)} disabled={!edges.left} aria-label="Previous faculty member"><ChevronLeft size={22} /></button>
-      <button type="button" onClick={() => move(1)} disabled={!edges.right} aria-label="Next faculty member"><ChevronRight size={22} /></button>
     </div>
   </div>;
 }

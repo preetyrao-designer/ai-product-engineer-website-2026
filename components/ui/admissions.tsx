@@ -1,28 +1,28 @@
 "use client";
 
-import { ArrowUpRight, FilePenLine, ClipboardCheck, MessagesSquare, Armchair, BookOpenCheck, PlaneLanding } from "lucide-react";
+import { ArrowUpRight } from "lucide-react";
 import { Timeline } from "./timeline";
 
 const steps = [
-  { title: "Apply · ₹999", Icon: FilePenLine, copy: "Pay the ₹999 application fee and fill in the application form. This puts you in the review pool.", tag: "Your first step" },
-  { title: "Selection decision", Icon: ClipboardCheck, copy: "Applications are reviewed and you are told where you stand: selected or rejected. No waiting without an answer.", tag: "A clear decision" },
-  { title: "Counselling", Icon: MessagesSquare, copy: "A conversation with the team about the program, the commitment, the travel, and whether this is the right fit for what you want to build.", tag: "Find your fit" },
-  { title: "Seat blocking · ₹5,000", Icon: Armchair, copy: "₹5,000 holds your seat in the cohort. Seats are limited and released in the order they are blocked.", tag: "Reserve your place" },
-  { title: "Full fee & onboarding", Icon: BookOpenCheck, copy: "Balance payment, then onboarding: cohort access, pre-reading, and travel and visa guidance for the residency.", tag: "Get ready to build" },
-  { title: "13–17 December · Sri Lanka", Icon: PlaneLanding, copy: "Start with five immersive days in Sri Lanka, continue building online for six weeks, and finish with a 36-hour build in Bangalore. One product, developed throughout your eight-week journey.", tag: "The journey begins" },
+  { title: "Submit your application", copy: "Pay ₹999 and tell us about your work and what you want to build. This puts you in the review pool." },
+  { title: "Applications are reviewed", copy: "We look at intent, ambition and whether this is the right environment for what you want to build." },
+  { title: "Attend your counselling", copy: "A conversation with the team about the program, the commitment and the travel." },
+  { title: "Reserve your seat with ₹5,000", copy: "Seats are limited and released in the order they are blocked. Adjusted against the full program fee." },
+  { title: "Complete your enrolment", copy: "Pay the balance, then onboarding: cohort access, pre-reading, travel and visa guidance." },
+  { title: "06 Jan 2027", copy: "Phase 1 begins: five days in Sri Lanka, then six weeks online, then a weekend hackathon in Bangalore." },
 ];
 
 export function Admissions({ applyHref }: { applyHref: string }) {
   return <section id="admissions" aria-labelledby="admissions-title" className="admissions-section">
     <header className="section-intro">
-      <p className="admissions-eyebrow">How to apply</p>
-      <h2 id="admissions-title">The admission process</h2>
-      <p className="admissions-intro-copy">Six steps from application to the first morning in Sri Lanka. Applications are reviewed on a rolling basis and seats are limited.</p>
+      <p className="admissions-eyebrow">Admission process</p>
+      <h2 id="admissions-title">₹999 to apply.<br />You pay nothing more unless you're selected.</h2>
+      <p className="admissions-intro-copy">Applications are reviewed on a rolling basis and seats are limited.</p>
     </header>
-    <Timeline data={steps.map(({ title, Icon, copy, tag }, i) => ({ title, titleContent: title === '13–17 December · Sri Lanka' ? <>13–17 December · <span className="admission-marker">Sri Lanka</span></> : undefined, content: <>
+    <Timeline data={steps.map(({ title, copy }, i) => ({ title, content: <>
       <p>{copy}</p>
       {i === steps.length - 1 && <p className="admission-duration-summary">5 days in Sri Lanka · 6 weeks online · 36 hours in Bangalore</p>}
-      <div className="admission-card-footer"><span className="foundry-glass-chip"><Icon size={15} aria-hidden="true"/>{tag}</span>{i === 0 && <a href={applyHref}>Apply Now <ArrowUpRight size={16} aria-hidden="true"/></a>}</div>
+      {i === 0 && <div className="admission-card-footer"><a href={applyHref}>Apply Now <ArrowUpRight size={16} aria-hidden="true"/></a></div>}
     </> }))}/>
     <div className="admissions-details">
       <article><h3>What you pay, and when</h3><dl>

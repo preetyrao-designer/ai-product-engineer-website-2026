@@ -7,7 +7,6 @@ const COMPANIES: [string, string][] = [
   ['PayPal', '/images/logos/paypal-com.png'],
   ['Intuit', '/images/logos/intuit-com.png'],
   ['Thomson Reuters', '/images/logos/thomsonreuters-com.png'],
-  ['Aditya Birla Group', '/images/logos/adityabirla-com.png'],
   ['PromptQL', '/images/logos/promptql-io.png'],
   ['LuminAI', '/images/logos/luminai-com.png'],
 ];

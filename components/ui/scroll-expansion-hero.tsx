@@ -40,10 +40,10 @@ export default function ScrollExpansionHero() {
       <motion.div className="sri-expansion-media" style={{ width: reduced ? '95vw' : width, height: reduced ? '85svh' : height }}>
         <video ref={video} src={VIDEO} poster={POSTER} muted loop playsInline preload="metadata" aria-label="Immersive experience video" />
         <div className="sri-expansion-shade" />
-        <motion.p className="sri-expansion-intro" style={{ opacity: reduced ? 1 : introOpacity }}>Build with AI. Understand what you ship. <strong>Eight weeks</strong> with Masai, from five days in <strong>Sri Lanka</strong> through six weeks online to a 36-hour <strong>Bangalore</strong> hackathon. Leave with a <strong>live product</strong> people can use.</motion.p>
+        <motion.p className="sri-expansion-intro" style={{ opacity: reduced ? 1 : introOpacity }}>Build an <strong>AI product for your own work</strong>, and learn enough of what's underneath it to <strong>leverage AI fully</strong> in your work and organization.</motion.p>
       </motion.div>
       <div className="sri-expansion-copy" style={reduced ? { display: 'none' } : undefined}>
-        {showOpening && <motion.span className="sri-expansion-chip" style={{ opacity: openingOpacity }}>Sri Lanka · Starts 13 Dec</motion.span>}
+        {showOpening && <motion.span className="sri-expansion-chip" style={{ opacity: openingOpacity }}>Sri Lanka Chapter · Starts 6 Jan</motion.span>}
         <h2 id="sri-experience-title">
           <motion.span style={{ x: reduced ? 0 : left }}>AI Residency:</motion.span>
           <motion.span style={{ x: reduced ? 0 : right }}>Beyond Vibe Coding</motion.span>

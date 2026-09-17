@@ -3,11 +3,11 @@ import { motion, useMotionValueEvent, useReducedMotion, useScroll, useTransform 
 import './hour-filmstrip.css';
 
 const FRAMES = [
-  { hour: 0, image: '/images/takeover/hour-0.jpg', label: 'Problem brief' },
-  { hour: 12, image: '/images/takeover/hour-12.jpg', label: 'Checkpoint' },
-  { hour: 18, image: '/images/takeover/hour-18.jpg', label: 'Core flow works' },
-  { hour: 26, image: '/images/takeover/hour-26.jpg', label: 'Feature freeze' },
-  { hour: 36, image: '/images/takeover/hour-36.jpg', label: 'Live demo' },
+  { hour: 0, image: '/images/takeover/hour-0.jpg', label: 'Scope locked', desc: 'Your team’s plan passes a mentor review. Then the clock starts.' },
+  { hour: 12, image: '/images/takeover/hour-12.jpg', label: 'It runs', desc: 'Something works end to end, however thin.' },
+  { hour: 17, image: '/images/takeover/hour-18.jpg', label: 'Core flow works', desc: 'The main journey runs on real inputs, including the AI step.' },
+  { hour: 23, image: '/images/takeover/hour-26.jpg', label: 'Feature freeze', desc: 'No new features. Deployment begins.' },
+  { hour: 36, image: '/images/takeover/hour-36.jpg', label: 'Demo Day', desc: 'Code freeze, then a live demo to the company.' },
 ] as const;
 const TOTAL_HOURS = 36;
 
@@ -90,6 +90,18 @@ export default function HourFilmstrip() {
   const showProgress = scrubbing ? progressWidth : `${touchProgress * 100}%`;
 
   return <div className="hour-filmstrip-wrap">
+    <div className="hour-filmstrip-bar" style={{ backgroundImage: 'url(/images/takeover/the-bar-banner.jpg)' }}>
+      <span className="hour-filmstrip-bar-tag">The bar</span>
+      <h3>What it takes to qualify for Bangalore.</h3>
+      <p>Attend at least 65% of the sessions and score at least 45% across two evaluations. Recorded viewing counts.</p>
+      <div className="hour-filmstrip-bar-chips">
+        <span className="hour-filmstrip-bar-chip">Overall score <strong>≥ 45%</strong></span>
+        <span className="hour-filmstrip-bar-chip">Attendance <strong>≥ 65%</strong></span>
+        <span className="hour-filmstrip-bar-chip">Week 04 evaluation <strong>45%</strong></span>
+        <span className="hour-filmstrip-bar-chip">Week 07 evaluation <strong>55%</strong></span>
+      </div>
+    </div>
+
     <div className={`hour-filmstrip-scroll-space${scrubbing ? ' is-scrubbing' : ''}`} ref={wrapRef}>
     <div className="hour-filmstrip-pin">
       <div className="hour-filmstrip-hr">
@@ -104,6 +116,7 @@ export default function HourFilmstrip() {
             <div className="hour-filmstrip-frame-label">
               <span className="hour-filmstrip-frame-hour">Hour {frame.hour}</span>
               <span className="hour-filmstrip-frame-name">{frame.label}</span>
+              <span className="hour-filmstrip-frame-desc">{frame.desc}</span>
             </div>
           </div>)}
         </motion.div>
@@ -111,16 +124,6 @@ export default function HourFilmstrip() {
 
       <div className="hour-filmstrip-progress"><motion.div className="hour-filmstrip-progress-fill" style={{ width: showProgress }} /></div>
     </div>
-    </div>
-
-    <div className="hour-filmstrip-bar" style={{ backgroundImage: 'url(/images/takeover/the-bar-banner.jpg)' }}>
-      <span className="hour-filmstrip-bar-tag">The bar</span>
-      <h3>What it takes to qualify for Bangalore.</h3>
-      <p>Score at least 45% across two evaluations and attend 65% of sessions — live or recorded, recorded viewing counts in full. Everyone who clears both travels — there is no cap.</p>
-      <div className="hour-filmstrip-bar-chips">
-        <span className="hour-filmstrip-bar-chip">Overall score <strong>≥ 45%</strong></span>
-        <span className="hour-filmstrip-bar-chip">Attendance <strong>≥ 65%</strong></span>
-      </div>
     </div>
   </div>;
 }

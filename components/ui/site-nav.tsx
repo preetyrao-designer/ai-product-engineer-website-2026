@@ -5,9 +5,10 @@ import { Menu, X } from 'lucide-react';
 import './site-nav.css';
 
 const LINKS = [
-  { label: 'Curriculum', href: '#curriculum' },
+  { label: 'Capstone', href: '#capstone' },
+  { label: 'Journey', href: '#curriculum' },
   { label: 'Faculty', href: '#faculty' },
-  { label: 'Demo Day', href: '#demo-day' },
+  { label: 'Hackathon', href: '#demo-day' },
   { label: 'Admission', href: '#admissions' },
   { label: 'Fees', href: '#fees' },
   { label: 'FAQ', href: '#faq' },

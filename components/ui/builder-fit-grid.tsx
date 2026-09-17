@@ -1,7 +1,7 @@
-import { Lightbulb, Code2, Rocket, Users } from 'lucide-react';
+import { Building2, User, Handshake, Briefcase } from 'lucide-react';
 import './builder-fit-grid.css';
 
-const ICONS = [Lightbulb, Code2, Rocket, Users];
+const ICONS = [Building2, User, Handshake, Briefcase];
 
 export default function BuilderFitGrid({ items }: { items: string[][] }) {
   return <div className="builder-fit-grid">

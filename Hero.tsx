@@ -9,6 +9,7 @@ import { Admissions } from './components/ui/admissions';
 import ScrollExpansionHero from './components/ui/scroll-expansion-hero';
 import TrustedBy from './components/ui/trusted-by';
 import JourneyExplorer from './components/ui/journey-explorer';
+import CapstoneExplorer from './components/ui/capstone-explorer';
 import { SiteNav } from './components/ui/site-nav';
 
 
@@ -27,12 +28,13 @@ export default function Hero({ applyHref }: HeroProps) {
       <BuilderFit />
       <section id="curriculum" aria-labelledby="curriculum-title" className="relative scroll-mt-8 pt-[110px] sm:pt-[200px]">
         <div className="section-intro">
-          <p className="mb-4 text-[10px] uppercase tracking-[0.17em] text-[#929DBF]" style={{ fontFamily: MONO }}>Your Leap Journey</p>
-          <h2 id="curriculum-title" className="text-3xl font-medium tracking-[-0.025em] sm:text-4xl" style={{ fontFamily: DISPLAY }}>One product. Built layer by layer.</h2>
-          <p className="mx-auto mt-4 max-w-[580px] text-sm leading-7 text-[#C5CCE3]">From your first commitment in Sri Lanka to your final demo in Bangalore. Follow the weeks to see your product take shape.</p>
+          <p className="mb-4 text-[10px] uppercase tracking-[0.17em] text-[#8CA7FF]" style={{ fontFamily: MONO }}>The AI Residency journey</p>
+          <h2 id="curriculum-title" className="mx-auto max-w-[680px] text-3xl font-medium tracking-[-0.025em] sm:text-4xl" style={{ fontFamily: DISPLAY }}>Five days in Sri Lanka. Six weeks online.<br />A weekend hackathon in Bangalore.</h2>
         </div>
         <JourneyExplorer />
       </section>
+
+      <CapstoneExplorer />
 
       <Faculty />
       <DemoExpectations />

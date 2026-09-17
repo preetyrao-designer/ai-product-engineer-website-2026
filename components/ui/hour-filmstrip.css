@@ -16,11 +16,12 @@
 .hour-filmstrip-frame-label{position:absolute;left:0;bottom:0;width:100%;padding:20px 18px 14px;background:linear-gradient(180deg,transparent,#00000060 45%,#000000ea);display:flex;flex-direction:column;gap:4px}
 .hour-filmstrip-frame-hour{font-family:var(--font-mono);font-size:11px;letter-spacing:.08em;color:#ffb454;text-shadow:0 1px 3px #000000e6,0 0 12px #00000099}
 .hour-filmstrip-frame-name{font-size:15px;font-weight:500;color:#f2f4fb}
+.hour-filmstrip-frame-desc{font-size:12.5px;line-height:1.5;color:#c5cce3}
 
 .hour-filmstrip-progress{position:relative;height:2px;background:#ffffff1a;margin-top:20px;border-radius:2px;overflow:hidden}
 .hour-filmstrip-progress-fill{position:relative;height:100%;background:linear-gradient(90deg,#174bff,#8ca7ff);box-shadow:0 0 10px #8ca7ff99}
 
-.hour-filmstrip-bar{position:relative;isolation:isolate;border-radius:24px;overflow:hidden;padding:40px 44px;min-height:260px;display:flex;flex-direction:column;justify-content:center;background-size:cover;background-position:center;margin-top:40px}
+.hour-filmstrip-bar{position:relative;isolation:isolate;border-radius:24px;overflow:hidden;padding:40px 44px;min-height:260px;display:flex;flex-direction:column;justify-content:center;background-size:cover;background-position:center;margin-bottom:40px}
 .hour-filmstrip-bar::before{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,#05060aef 30%,#05060a8c 75%,#05060a40)}
 .hour-filmstrip-bar-tag{display:inline-block;align-self:flex-start;font-family:var(--font-mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#8ca7ff;background:#8ca7ff1f;border:1px solid #8ca7ff40;padding:7px 14px;border-radius:999px;margin-bottom:18px}
 .hour-filmstrip-bar h3{font-size:clamp(26px,3.6vw,40px);font-weight:600;letter-spacing:-.025em;line-height:1.2;color:#e9edff}
