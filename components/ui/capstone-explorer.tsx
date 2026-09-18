@@ -1,29 +1,55 @@
 import { useState } from 'react';
-import { Megaphone, Palette, Workflow } from 'lucide-react';
 import './capstone-explorer.css';
 
-type Example = { title: string; copy: string };
-type Category = { key: string; label: string; icon: typeof Megaphone; example: Example };
+type Example = { company: string; title: string; copy: string; tags: string; ships: string };
+type Category = { key: string; label: string; example: Example };
 
 const CATEGORIES: Category[] = [
   {
-    key: 'marketing', label: 'Marketing & growth', icon: Megaphone,
-    example: { title: 'Always-on brand marketer', copy: 'Learns your brand, plans the month, writes the copy, generates the creative, and posts it — with one approval before anything goes live.' },
+    key: 'marketing', label: 'Marketing & Growth',
+    example: {
+      company: 'Mamaearth',
+      title: 'The Always-On Brand Marketer',
+      copy: 'Mamaearth launches new products every few weeks, with each launch taking days of agency work. Build an agent that takes a product brief, plans 30 days of content, writes the copy, creates the creatives, and sends them to a scheduler through n8n — with one human approval before publishing.',
+      tags: 'Brand grounding · Multimodal AI · n8n · Human approval',
+      ships: 'A live campaign agent that turns one product brief into 30 on-brand posts.',
+    },
   },
   {
-    key: 'product', label: 'Product & design', icon: Palette,
-    example: { title: 'Zero-to-PRD agent', copy: 'Researches the market, interrogates the competition, writes the PRD, and hands back a design system and screens ready to build against.' },
+    key: 'product', label: 'Product & Design',
+    example: {
+      company: 'Zomato',
+      title: 'Idea → PRD → Screens',
+      copy: 'A PM says, “Let’s build meal subscriptions.” Build an agent that researches five competitors, writes the PRD, and creates a design system with three working screens. Every decision should link back to the research behind it.',
+      tags: 'Competitive research · Structured outputs · Design generation · Traceability',
+      ships: 'A one-line idea turned into a PRD and three build-ready screens.',
+    },
   },
   {
-    key: 'ops', label: 'Operations', icon: Workflow,
-    example: { title: 'Company brain', copy: "Answers anything your team or your customers ask from your own documents — cites the source every time, and escalates what it doesn't know." },
+    key: 'ops', label: 'Operations',
+    example: {
+      company: 'Urban Company',
+      title: 'Grounded Support Agent',
+      copy: "Urban Company's help centre has hundreds of pages, but customers still raise tickets. Build a support agent using the help centre and 50 real customer questions from app reviews. Every answer must cite its source. If it cannot find an answer, it should refuse and raise a ticket through MCP.",
+      tags: 'RAG · Citations · Refusal behaviour · MCP · Evals',
+      ships: 'A support agent tested on 50 questions — answer, cite, refuse, or escalate. Zero unsourced answers.',
+    },
+  },
+  {
+    key: 'owners', label: 'Business Owners',
+    example: {
+      company: 'D2C Store',
+      title: 'Order-to-Cash Agent',
+      copy: 'A store owner is matching orders, invoices, and payments late at night. Build an agent that reconciles every transaction, finds mismatches, drafts follow-up messages, and creates a morning summary. Nothing gets sent without approval. It runs automatically every day.',
+      tags: 'Agent tools · Reconciliation · n8n · Human-in-the-loop',
+      ships: 'A daily agent that finds every exception and drafts the follow-up, ready for one-tap approval.',
+    },
   },
 ];
 
 export default function CapstoneExplorer() {
   const [active, setActive] = useState(0);
   const category = CATEGORIES[active];
-  const Icon = category.icon;
 
   return <section id="capstone" className="program-information capstone-section" aria-labelledby="capstone-title">
     <header className="section-intro">
@@ -37,11 +63,12 @@ export default function CapstoneExplorer() {
     </div>
 
     <article className="capstone-card-wide">
-      <span className="capstone-card-wide-icon" aria-hidden="true"><Icon size={22} strokeWidth={1.8} /></span>
       <div className="capstone-card-wide-body">
-        <span className="capstone-card-tag">{category.label}</span>
+        <span className="capstone-card-company">{category.example.company}</span>
         <h4>{category.example.title}</h4>
         <p className="capstone-card-wide-copy">{category.example.copy}</p>
+        <span className="capstone-card-data">{category.example.tags}</span>
+        <p className="capstone-card-ships"><strong>Ships:</strong> {category.example.ships}</p>
       </div>
     </article>
 
